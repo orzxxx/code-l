@@ -1,0 +1,65 @@
+[class^="el-icon-fa"], [class*=" el-icon-fa"] {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome !important;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.el-header, .el-footer {
+	color: #333;
+	text-align: center;
+	line-height: 60px;
+	border-bottom: 1px solid #eff0f4;
+}
+
+.el-aside {
+	width: 200px;
+	min-height: 100%;
+	color: #333;
+	background-color: rgb(84, 92, 100);
+	line-height: 200px;
+	position: relative;
+	margin: 0px;
+	padding-left: 0px;
+}
+
+.el-menu {
+	border-right: 0px;
+}
+
+.el-main {
+	background-color: #E9EEF3;
+	color: #333;
+	text-align: center;
+	line-height: 160px;
+}
+
+body > .el-container {
+	margin-bottom: 40px;
+}
+
+.el-main> .el-breadcrumb {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+	line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+	line-height: 320px;
+}
+
+body {
+	margin: 0px;
+}
+
+.my__content {
+	border-radius: 4px;
+	background-color: white;
+	padding: 20px;
+}
