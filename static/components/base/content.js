@@ -84,7 +84,7 @@ var MyContent = Vue.component('my-content', {
     data: function () {
         return {
             data: [{
-                name: '1'
+                name: ''
             }],
             defaultProps: {
                 children: 'tableInfos',

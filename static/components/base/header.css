@@ -1,0 +1,7 @@
+.my-header__collapse--rotate-enter-active, .my-header__collapse--rotate-leave-active {
+    transition: all 0.2s ease;
+}
+
+.my-header__collapse--rotate-enter, .my-header__collapse--rotate-leave-to {
+    transform: rotate(90deg);
+}

@@ -1,3 +1,9 @@
+/*避免未渲染展示*/
+[v-cloak] {
+	display: none;
+}
+
+/*整合fontawesome*/
 [class^="el-icon-fa"], [class*=" el-icon-fa"] {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome !important;
@@ -9,13 +15,14 @@
 
 .el-header, .el-footer {
 	color: #333;
-	text-align: center;
 	line-height: 60px;
 	border-bottom: 1px solid #eff0f4;
+	display:flex;
+	align-items:center;
 }
 
 .el-aside {
-	width: 200px;
+	overflow: visible;
 	min-height: 100%;
 	color: #333;
 	background-color: rgb(84, 92, 100);
@@ -34,6 +41,11 @@
 	color: #333;
 	text-align: center;
 	line-height: 160px;
+}
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+	width: 200px;
+	min-height: 400px;
 }
 
 body > .el-container {

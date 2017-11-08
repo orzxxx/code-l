@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-<link rel="stylesheet" href="./index.css">
+<!--<link rel="stylesheet" href="assets/animate/animate.min.css">-->
+<link rel="stylesheet" href="assets/element/index.css">
 
-<div id="app">
+<link rel="stylesheet" href="./index.css">
+<link rel="stylesheet" href="components/base/header.css">
+
+<div id="app" v-cloak>
 	<el-container>
 		<el-aside width="200px;">
 			<my-sidebar />
@@ -13,10 +16,16 @@
 			</el-header>
 			<el-main>
 				<el-breadcrumb separator-class="el-icon-arrow-right">
-					<el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-					<el-breadcrumb-item>活动管理</el-breadcrumb-item>
-					<el-breadcrumb-item>活动列表</el-breadcrumb-item>
-					<el-breadcrumb-item>活动详情</el-breadcrumb-item>
+					<el-breadcrumb-item :to="{ path: '/' }">{{bc1}}</el-breadcrumb-item>
+					<template v-if="bc2">
+						<el-breadcrumb-item>{{bc2}}</el-breadcrumb-item>
+					</template>
+					<template v-if="bc3">
+						<el-breadcrumb-item>{{bc3}}</el-breadcrumb-item>
+					</template>
+					<template v-if="bc4">
+						<el-breadcrumb-item>{{bc4}}</el-breadcrumb-item>
+					</template>
 				</el-breadcrumb>
 				<div class="my__content">
 					<my-content />
@@ -31,27 +40,43 @@
     <router-view></router-view>
 </div>-->
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="assets/axios/axios.js"></script>
+<script src="assets/vue/vue.js"></script>
+<script src="assets/vue/vue-router.js"></script>
+<script src="assets/vue/vuex.js"></script>
+<script src="assets/element/index.js"></script>
+<!--<script src="assets/tween/Tween.js"></script>-->
 
+<script src="./store.js"></script>
 <script src="components/base/header.js"></script>
 <script src="components/base/sidebar.js"></script>
 <script src="components/base/content.js"></script>
 
 <script>
 
-var router = new VueRouter({
-  routes: [
-  	{ path: '/a', component: MyHeader },
-  	{ path: '/b', component: MyContent }
-  ]
-})
+	var router = new VueRouter({
+		routes: [
+			{path: '/a', component: MyHeader},
+			{path: '/b', component: MyContent}
+		]
+	});
 
-
-	  var vm = new Vue({
-	 router: router
-    }).$mount('#app')
+	var vm = new Vue({
+		computed: {
+			bc1: function() {
+				return store.state.bc1;
+			},
+			bc2: function() {
+				return store.state.bc2;
+			},
+			bc3: function() {
+				return store.state.bc3;
+			},
+			bc4: function() {
+				return store.state.bc4;
+			}
+		},
+		router: router
+	}).$mount('#app')
 </script>
 
