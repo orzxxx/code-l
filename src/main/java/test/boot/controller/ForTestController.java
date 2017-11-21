@@ -1,4 +1,4 @@
-package test.boot.controller;
+/*package test.boot.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -49,11 +49,11 @@ public class ForTestController {
 	@Autowired
 	private ProdInfoServiceImpl impl;
 	
-    /*@RequestMapping("/")
+    @RequestMapping("/")
     public String home() {
     	//int i = 4 / 0;
         return "Hello World";
-    }*/
+    }
     
     @RequestMapping("/t")
     void t() {
@@ -111,8 +111,8 @@ public class ForTestController {
     	        DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/datasync", "root","root");
     	DSLContext create = DSL.using(connection, SQLDialect.MYSQL);
     	System.out.println(connection.getCatalog());
-    	/*ResultQuery<Record> resultQuery = create.resultQuery("SELECT * FROM tbl_mtms_app_inf");
-    	Result<Record> result = resultQuery.fetch();*/
+    	ResultQuery<Record> resultQuery = create.resultQuery("SELECT * FROM tbl_mtms_app_inf");
+    	Result<Record> result = resultQuery.fetch();
     	create.createSchema("datasync");
     	//create.informationSchema(catalog)
     	//create.mete().
@@ -173,3 +173,4 @@ public class ForTestController {
     	return tableInfo;
     }
 }
+*/

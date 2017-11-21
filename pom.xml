@@ -17,6 +17,7 @@
 		<fastjson.version>1.2.24</fastjson.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<java.version>1.8</java.version>
+		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,11 @@
 			<artifactId>jooq</artifactId>
 		</dependency>
 		<dependency>
+	        <groupId>org.mapstruct</groupId>
+	        <artifactId>mapstruct-jdk8</artifactId>
+	        <version>${org.mapstruct.version}</version>
+	    </dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
@@ -77,8 +83,8 @@
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>properties-maven-plugin</artifactId>
+						<groupId>it.ozimov</groupId>
+    					<artifactId>yaml-properties-maven-plugin</artifactId>
 						<executions>
 							<execution>
 								<phase>initialize</phase>
@@ -87,7 +93,7 @@
 								</goals>
 								<configuration>
 									<files>
-										<file>src/main/resources/application-dev.properties</file>
+										<file>src/main/resources/application-dev.yml</file>
 									</files>
 								</configuration>
 							</execution>
@@ -99,7 +105,7 @@
 						<artifactId>jooq-codegen-maven</artifactId>
 						<executions>
 							<execution>
-								<id>generate-mysql</id>
+								<id>generate-h2</id>
 								<phase>generate-sources</phase>
 								<goals>
 									<goal>generate</goal>
@@ -143,6 +149,21 @@
 
 	<build>
 		<plugins>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.5.1</version>
+	            <configuration>
+	                <annotationProcessorPaths>
+	                    <path>
+	                        <groupId>org.mapstruct</groupId>
+	                        <artifactId>mapstruct-processor</artifactId>
+	                        <version>${org.mapstruct.version}</version>
+	                    </path>
+	                </annotationProcessorPaths>
+	            </configuration>
+	        </plugin>
+		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

@@ -6,11 +6,12 @@ package test.boot.entity;
 
 import javax.annotation.Generated;
 
+import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
 
-import test.boot.entity.tables.Test;
-import test.boot.entity.tables.records.TestRecord;
+import test.boot.entity.tables.TDatasource;
+import test.boot.entity.tables.records.TDatasourceRecord;
 
 
 /**
@@ -31,12 +32,13 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<TDatasourceRecord, Integer> IDENTITY_T_DATASOURCE = Identities0.IDENTITY_T_DATASOURCE;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<TestRecord> CONSTRAINT_2 = UniqueKeys0.CONSTRAINT_2;
+    public static final UniqueKey<TDatasourceRecord> CONSTRAINT_6 = UniqueKeys0.CONSTRAINT_6;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -47,7 +49,11 @@ public class Keys {
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
+    private static class Identities0 extends AbstractKeys {
+        public static Identity<TDatasourceRecord, Integer> IDENTITY_T_DATASOURCE = createIdentity(TDatasource.T_DATASOURCE, TDatasource.T_DATASOURCE.ID);
+    }
+
     private static class UniqueKeys0 extends AbstractKeys {
-        public static final UniqueKey<TestRecord> CONSTRAINT_2 = createUniqueKey(Test.TEST, "CONSTRAINT_2", Test.TEST.ID);
+        public static final UniqueKey<TDatasourceRecord> CONSTRAINT_6 = createUniqueKey(TDatasource.T_DATASOURCE, "CONSTRAINT_6", TDatasource.T_DATASOURCE.ID);
     }
 }

@@ -1,58 +1,62 @@
 var MySidebar = Vue.component('my-sidebar', {
         template: '<el-menu\
-            default-active="1"\
             class="el-menu-vertical-demo"\
             background-color="#545c64"\
             text-color="#fff"\
             active-text-color="#ffd04b"\
             :collapse="isCollapse" \
-            @select="handleSelect">\
-            <template v-for="(menu, i1) in menus">\
-                <el-submenu :index="i1.toString()">\
-                    <template slot="title">\
-                        <i :class="menu.icon"></i>\
-                        <span>{{menu.name}}</span>\
-                    </template>\
-                    <el-menu-item-group>\
-                         <template v-for="(subMenu, i2) in menu.subMenus">\
-                            <el-menu-item :index="i1.toString() + \'-\' + i2.toString()">\
-                                {{subMenu.name}}\
-                            </el-menu-item>\
-                         </template>\
-                    </el-menu-item-group>\
-                </el-submenu>\
+            :router="true" \
+            :default-active="active">\
+            <template v-for="(route, index) in $router.options.routes[0].children">\
+                <template v-if=" route.children">\
+                    <el-submenu :index="route.name">\
+                        <template slot="title">\
+                            <i :class="route.icon"></i>\
+                            <span>{{route.name}}</span>\
+                        </template>\
+                        <el-menu-item :key="cIndex" :index="cRoute.path"\
+                            v-for="(cRoute, cIndex) in route.children" :route="cRoute">\
+                            {{cRoute.name}}\
+                        </el-menu-item>\
+                    </el-submenu>\
+                </template>\
+                <template v-if="!route.children">\
+                    <el-menu-item :key="index" :index="route.path" :route="route">{{route.name}}</el-menu-item>\
+                </template>\
             </template>\
 	</el-menu>',
+    data: function() {
+        return {
+            active: "/"
+        }
+    },
     computed: {
         isCollapse: function() {
+            // el-table width为100%时有问题
             return store.state.isMenuCollapse;
         }
     },
-    methods: {
-        handleSelect: function(key, keyPath) {
-            var pIndex = key.split("-")[0];
-            var cIndex = key.split("-")[1];
-            store.commit('setBC', {
-                bc2: this.menus[pIndex].name,
-                bc3: this.menus[pIndex].subMenus[cIndex].name
-            } );
+    watch: {
+        $route: function(to) {
+            this.active = this.getActive();
         }
     },
-    data: function () {
-        return {
-            menus: [{
-                    name: "导航1",
-                    icon: "el-icon-menu",
-                    subMenus: [
-                        {name: "选项11", route: ""},
-                        {name: "选项12", route: ""}
-                ]}, {
-                    name: "导航2", icon: "el-icon-menu",
-                    subMenus: [
-                        {name: "选项21", route: ""},
-                        {name: "选项22", route: ""}
-                ]}
-            ]
+    mounted: function() {
+        this.active = this.getActive();
+    },
+    methods: {
+        getActive: function() {
+            var level = this.$route.meta.level;
+            var path = "";
+            if (level == 3) {
+                path = this.$route.matched[2].path;
+            } else {
+                path = this.$route.matched[level].path;
+            }
+            if (path.substr(0, 1) == "/") {
+                path = path.substr(1);
+            }
+            return path;
         }
     }
 });

@@ -1,4 +1,4 @@
-package test.boot.dao;
+/*package test.boot.dao;
 
 import static test.boot.entry.mysql.tables.TProdInfo.T_PROD_INFO;
 
@@ -42,10 +42,10 @@ public class TProdInfoDao {
 				.execute();
 	}
 	
-	/*public int save(List<TProdInfoRecord> records) {
+	public int save(List<TProdInfoRecord> records) {
 		return create.batchInsert(records)
 				.execute().length;
-	}*/
+	}
 	
 	public int save(List<TProdInfoRecord> records) {
 		Query[] queries = records
@@ -73,3 +73,4 @@ public class TProdInfoDao {
 				.execute();
 	}
 }
+*/

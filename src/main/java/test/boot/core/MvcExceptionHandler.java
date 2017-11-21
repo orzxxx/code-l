@@ -1,4 +1,4 @@
-/*package test.boot.core;
+package test.boot.core;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,14 +6,12 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.alibaba.fastjson.JSON;
+import test.boot.common.exception.BusinessException;
 
 @ControllerAdvice
 public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
@@ -21,27 +19,30 @@ public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public void defaultErrorHandler(HttpServletRequest request, HttpServletResponse response, Throwable ex) {
-    	responseError(response, "error");
+    	if (ex instanceof BusinessException) {
+    		responseError(response, HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
+		} else {
+			responseError(response, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "系统错误");
+		}
     }
 
-    private HttpStatus getStatus(HttpServletRequest request) {
+   /* private HttpStatus getStatus(HttpServletRequest request) {
         Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
         if (statusCode == null) {
             return HttpStatus.INTERNAL_SERVER_ERROR;
         }
         return HttpStatus.valueOf(statusCode);
-    }
+    }*/
 
-    public static void responseError(HttpServletResponse response, Object obj) {
+    public static void responseError(HttpServletResponse response, int status, String msg) {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json; charset=utf-8");
-		response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+		response.setStatus(status);
 		
 		PrintWriter out = null;
 		try {
-			String json = JSON.toJSONString(obj);
 			out = response.getWriter();
-			out.append(json);
+			out.append(msg);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -50,4 +51,4 @@ public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
 			}
 		}
 	}
-}*/
+}

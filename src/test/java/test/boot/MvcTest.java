@@ -1,4 +1,4 @@
-package test.boot;
+/*package test.boot;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -34,3 +34,4 @@ public class MvcTest {
 		.andExpect(content().string("1"));
 	}
 }
+*/

@@ -11,10 +11,11 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Catalog;
+import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
-import test.boot.entity.tables.Test;
+import test.boot.entity.tables.TDatasource;
 
 
 /**
@@ -30,7 +31,7 @@ import test.boot.entity.tables.Test;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -1613211444;
+    private static final long serialVersionUID = 327034353;
 
     /**
      * The reference instance of <code>PUBLIC</code>
@@ -38,9 +39,9 @@ public class Public extends SchemaImpl {
     public static final Public PUBLIC = new Public();
 
     /**
-     * The table <code>PUBLIC.TEST</code>.
+     * The table <code>PUBLIC.T_DATASOURCE</code>.
      */
-    public final Test TEST = test.boot.entity.tables.Test.TEST;
+    public final TDatasource T_DATASOURCE = test.boot.entity.tables.TDatasource.T_DATASOURCE;
 
     /**
      * No further instances allowed
@@ -59,6 +60,18 @@ public class Public extends SchemaImpl {
     }
 
     @Override
+    public final List<Sequence<?>> getSequences() {
+        List result = new ArrayList();
+        result.addAll(getSequences0());
+        return result;
+    }
+
+    private final List<Sequence<?>> getSequences0() {
+        return Arrays.<Sequence<?>>asList(
+            Sequences.SYSTEM_SEQUENCE_EAEC937E_F281_407C_92EF_D2648F19A07C);
+    }
+
+    @Override
     public final List<Table<?>> getTables() {
         List result = new ArrayList();
         result.addAll(getTables0());
@@ -67,6 +80,6 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            Test.TEST);
+            TDatasource.T_DATASOURCE);
     }
 }

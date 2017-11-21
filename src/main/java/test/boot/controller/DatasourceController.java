@@ -1,50 +1,66 @@
 package test.boot.controller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import org.jooq.DSLContext;
-import org.jooq.DataType;
-import org.jooq.Field;
-import org.jooq.SQLDialect;
-import org.jooq.Schema;
-import org.jooq.Table;
-import org.jooq.exception.DataAccessException;
-import org.jooq.impl.DSL;
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import test.boot.dao.TProdInfoDao;
-import test.boot.entry.mysql.tables.records.TProdInfoRecord;
-import test.boot.model.ColumnInfo;
-import test.boot.model.SchemaInfo;
-import test.boot.model.TableInfo;
-import test.boot.service.impl.ProdInfoServiceImpl;
+import test.boot.TB;
+import test.boot.entity.tables.pojos.TDatasource;
+import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.mapper.DatasourceMapper;
+import test.boot.model.dto.DatasourceDTO;
+import test.boot.service.DatasourceService;
 
 @RestController
-@RequestMapping("/datasource")
+@RequestMapping("/datasources")
 public class DatasourceController {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	private TProdInfoDao tProdInfoDao;
+	private DatasourceService datasourceService;
 	
 	@Autowired
-	private ProdInfoServiceImpl impl;
+	private DatasourceMapper datasourceMapper;
+	
+	@RequestMapping(method = RequestMethod.GET)
+    public List<TDatasource> list() {
+        return datasourceService.listDatasource();
+    }
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public TDatasource get(@PathVariable int id) {
+		return datasourceService.getDatasource(id);
+	}
+	
+	/*@RequestMapping(method = RequestMethod.POST)
+    public int save(@RequestBody TB tb) {
+        return datasourceService.saveDatasource(null);
+    }*/
+	@RequestMapping(method = RequestMethod.POST)
+	public int save(@RequestBody DatasourceDTO dto) {
+		return datasourceService.saveDatasource(datasourceMapper.toEntity(dto));
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT)
+	public int update(@RequestBody DatasourceDTO dto) {
+		return datasourceService.updateDatasource(datasourceMapper.toEntity(dto));
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public int remove(@PathVariable int id) {
+		return datasourceService.removeDatasource(id);
+	}
 	
     /*@RequestMapping("/")
     public String home() {
@@ -52,7 +68,7 @@ public class DatasourceController {
         return "Hello World";
     }*/
     
-    @RequestMapping("/t")
+    /*@RequestMapping("/t")
     void t() {
     	impl.transaction();
     }
@@ -108,8 +124,8 @@ public class DatasourceController {
     	        DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/datasync", "root","root");
     	DSLContext create = DSL.using(connection, SQLDialect.MYSQL);
     	System.out.println(connection.getCatalog());
-    	/*ResultQuery<Record> resultQuery = create.resultQuery("SELECT * FROM tbl_mtms_app_inf");
-    	Result<Record> result = resultQuery.fetch();*/
+    	ResultQuery<Record> resultQuery = create.resultQuery("SELECT * FROM tbl_mtms_app_inf");
+    	Result<Record> result = resultQuery.fetch();
     	create.createSchema("datasync");
     	//create.informationSchema(catalog)
     	//create.mete().
@@ -168,5 +184,5 @@ public class DatasourceController {
     	tableInfo.setColumns(columnInfos);
     	
     	return tableInfo;
-    }
+    }*/
 }

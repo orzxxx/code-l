@@ -1,109 +1,77 @@
 var MyContent = Vue.component('my-content', {
-    template: '<div id="app">\
-	<el-row :gutter="20">\
-	  <el-col :span="8">\
-	  	<div class="grid-content bg-purple">\
-	  		<el-tree \
-				:data="data" \
-				:props="defaultProps" \
-				accordion \
-				@node-click="handleNodeClick"> \
-			</el-tree>\
-	  	</div>\
-	  </el-col>\
-	  <el-col :span="16">\
-	  	<div class="grid-content bg-purple">\
-	  		<el-table\
-			    ref="multipleTable"\
-			    :data="tableData"\
-			    tooltip-effect="dark"\
-			    style="width: 100%">\
-			    <el-table-column\
-			      type="selection"\
-			      width="55">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="name"\
-			      label="列名"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="type"\
-			      label="类型"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="length"\
-			      label="长度"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="scale"\
-			      label="小数点"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="nullable"\
-			      label="非空"\
-			      width="120">\
-			      <template slot-scope="scope">{{ scope.row.nullable ? "true" : "false" }}</template>\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="defaultValue"\
-			      label="默认值"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="comment"\
-			      label="注释"\
-			      width="120">\
-			    </el-table-column>\
-			    <el-table-column\
-			      prop="key"\
-			      label=""\
-			      width="120">\
-			      <template slot-scope="scope" v-if="scope.row.key">\
-			      	<i class="el-icon-fa-key"></i>\
-			      </template>\
-			    </el-table-column>\
-			</el-table>\
-	  	</div>\
-	  </el-col>\
-	</el-row>\
-</div>',
-    created: function () {
-        var self = this;
-        axios.get('/matedate')
-            .then(function (resp) {
-                self.data = resp.data;
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    },
+    template: '<div class="my__content" v-loading="loading">\
+        <component v-bind:is="currentView"></component>\
+    </div>',
     data: function () {
         return {
-            data: [{
-                name: ''
-            }],
-            defaultProps: {
-                children: 'tableInfos',
-                label: 'name'
-            },
-            tableData: []
+            currentView: Home,
+            allViews: new Map(),
+            loading: false
         }
     },
+    mounted: function() {
+        // 全局ajax
+        axios.interceptors.request.use(function (config) {
+            this.loading = true; // loading
+            return config;
+        }.bind(this), function (error) {
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.response.use(function (response) {
+            this.loading = false; // 取消loading
+            return response;
+        }.bind(this), function (error) {
+            this.loading = false; // 取消loading
+            // 错误弹窗
+            this.$notify({
+                title: '提示',
+                message: error.response.data,
+                position: 'bottom-right'
+            });
+            return Promise.reject(error);
+        }.bind(this));
+
+        // 获取所有vue-router组件
+        this.$router.options.routes[0].children.map(function(cr) {
+            this.getChildRoutes(this.allViews, "", cr);
+        }.bind(this));
+        this.allViews.set("/", Home); // 放后面避免被覆盖
+        this.allViews.set("", Home);
+
+        this.currentView = this.getActive();
+    },
     methods: {
-        handleNodeClick: function (data, node) {
-            if (node.isLeaf) {
-                var self = this;
-                axios.get('/tables/' + data.name)
-                    .then(function (resp) {
-                        self.tableData = resp.data.columns;
-                    }).catch(function (error) {
-                    console.log(error);
-                });
+        getChildRoutes: function(allViews, path, r) {
+            this.allViews.set(this.getFullPath(path, r.path), r.component);
+            if (r.children) {
+                r.children.forEach(function(cr) {
+                    this.getChildRoutes(this.allViews, this.getFullPath(path, r.path), cr);
+                }.bind(this));
             }
+        },
+        getFullPath: function(pPath, cPath) {
+            if (pPath == "/" && cPath.substr(0, 1) != "/") {
+                return pPath + cPath;
+            } else if (pPath == "/" && cPath.substr(0, 1) == "/") {
+                return cPath;
+            } else if (pPath != "/" && cPath.substr(0, 1) != "/") {
+                return pPath + "/" + cPath;
+            } else {
+                return pPath + cPath;
+            }
+        },
+        getActive: function() {
+            if (!this.$route.matched) {
+                return null; // TODO 404
+            }
+            var path = this.$route.matched[this.$route.matched.length - 1].path;
+            return this.allViews.get(path);
+        }
+    },
+    watch: {
+        $route: function(to) {
+            this.currentView = this.getActive();
         }
     }
 });

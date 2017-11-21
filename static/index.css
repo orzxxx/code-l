@@ -39,13 +39,22 @@
 .el-main {
 	background-color: #E9EEF3;
 	color: #333;
-	text-align: center;
 	line-height: 160px;
 }
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {
 	width: 200px;
 	min-height: 400px;
+}
+
+/*el表单默认样式*/
+.el-form {
+	width: 380px;
+}
+
+/*TODO el-table滚动条问题*/
+.el-table__body-wrapper {
+	overflow-x: hidden;
 }
 
 body > .el-container {
@@ -71,7 +80,26 @@ body {
 }
 
 .my__content {
+	min-height: 77%;
 	border-radius: 4px;
 	background-color: white;
 	padding: 20px;
+}
+
+.my__filter-container {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e6ebf5;
+}
+
+.my__filter-container > .my__filter-container__item {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.my__filter-container > .el-input{
+	width: 180px;
 }

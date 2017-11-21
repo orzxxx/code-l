@@ -1,4 +1,4 @@
-package test.boot;
+/*package test.boot;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -27,3 +27,4 @@ public class JooqTest {
 		tProdInfoDao.save(record);
 	}
 }
+*/

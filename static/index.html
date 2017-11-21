@@ -15,21 +15,8 @@
 				<my-header />
 			</el-header>
 			<el-main>
-				<el-breadcrumb separator-class="el-icon-arrow-right">
-					<el-breadcrumb-item :to="{ path: '/' }">{{bc1}}</el-breadcrumb-item>
-					<template v-if="bc2">
-						<el-breadcrumb-item>{{bc2}}</el-breadcrumb-item>
-					</template>
-					<template v-if="bc3">
-						<el-breadcrumb-item>{{bc3}}</el-breadcrumb-item>
-					</template>
-					<template v-if="bc4">
-						<el-breadcrumb-item>{{bc4}}</el-breadcrumb-item>
-					</template>
-				</el-breadcrumb>
-				<div class="my__content">
-					<my-content />
-				</div>
+				<my-breadcrumb-container></my-breadcrumb-container>
+				<my-content></my-content>
 			</el-main>
 		</el-container>
 	</el-container>
@@ -40,6 +27,7 @@
     <router-view></router-view>
 </div>-->
 
+<script src="assets/common/es6-shim.min.js"></script>
 <script src="assets/axios/axios.js"></script>
 <script src="assets/vue/vue.js"></script>
 <script src="assets/vue/vue-router.js"></script>
@@ -50,32 +38,94 @@
 <script src="./store.js"></script>
 <script src="components/base/header.js"></script>
 <script src="components/base/sidebar.js"></script>
+<script src="components/base/breadcrumb-container.js"></script>
 <script src="components/base/content.js"></script>
+<script src="components/base/empty-router-view.js"></script>
+
+<script src="components/home.js"></script>
+<script src="components/datasource/index.js"></script>
+<script src="components/datasource/add.js"></script>
+<script src="components/datasource/edit.js"></script>
+<script src="components/datasource/form.js"></script>
 
 <script>
 
+	var routes = [{
+			path: '/',
+			name: '首页',
+			component: Home,
+			children: [
+				{
+					path: '',
+					component: EmptyRouterView,
+					name: '数据库',
+					icon: 'el-icon-message',
+					meta: {
+						level: 1
+					},
+					children: [{
+						path: 'datasources',
+						name: '数据源',
+						component: DataSourceIndex,
+						meta: {
+							level: 2
+						},
+						children: [
+							{
+								path: 'new',
+								name: '新增',
+								component: DataSourceAdd,
+								meta: {
+									level: 3
+								}
+							}, {
+								path: ':id(\\d+)',
+								name: '修改',
+								component: DataSourceEdit,
+								meta: {
+									level: 3
+								}
+							}
+						]
+					}]
+				}, {
+					path: '/form',
+					component: MyHeader,
+					name: '表单',
+					icon: 'el-icon-document',
+					children: [
+						{
+							path: 'big-form',
+							name: '简历管理',
+							component: MyHeader,
+							imgUrl: 'https://o0p2g4ul8.qnssl.com/vsite%2Fbackground.jpg'
+						}
+					]
+				}, {
+					path: 'chart',
+					component: MyHeader,
+					name: '图表',
+					icon: 'el-icon-document'
+				}, {
+					path: 'chart2',
+					component: MyHeader,
+					name: '图表',
+					icon: 'el-icon-document'
+				}
+			]
+		}
+	];
+
 	var router = new VueRouter({
-		routes: [
+		/*routes: [
+			{path: '/datasources', component: DataSourceIndex},
+			{path: '/b', component: MyContent},
 			{path: '/a', component: MyHeader},
-			{path: '/b', component: MyContent}
-		]
+		]*/
+		routes: routes
 	});
 
 	var vm = new Vue({
-		computed: {
-			bc1: function() {
-				return store.state.bc1;
-			},
-			bc2: function() {
-				return store.state.bc2;
-			},
-			bc3: function() {
-				return store.state.bc3;
-			},
-			bc4: function() {
-				return store.state.bc4;
-			}
-		},
 		router: router
 	}).$mount('#app')
 </script>
