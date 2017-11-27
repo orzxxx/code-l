@@ -57,6 +57,10 @@
 	overflow-x: hidden;
 }
 
+.el-table__empty-block {
+	height: 50%;
+}
+
 body > .el-container {
 	margin-bottom: 40px;
 }
@@ -74,7 +78,28 @@ body > .el-container {
 .el-container:nth-child(7) .el-aside {
 	line-height: 320px;
 }
+/*tag*/
+.el-tag + .el-tag {
+	margin-left: 10px;
+}
 
+.el-form-item__content > .button--new-tag {
+	margin-top: 5px;
+	margin-left: 10px;
+	height: 32px;
+	line-height: 30px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.el-form-item__content > .input--new-tag {
+	margin-top: 5px;
+	width: 90px;
+	margin-left: 10px;
+	vertical-align: bottom;
+}
+
+/*custom*/
 body {
 	margin: 0px;
 }

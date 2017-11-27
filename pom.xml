@@ -16,6 +16,7 @@
 	<properties>
 		<fastjson.version>1.2.24</fastjson.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-collections4.version>4.1</commons-collections4.version>
 		<java.version>1.8</java.version>
 		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 	</properties>
@@ -35,6 +36,11 @@
 			<version>${commons-lang3.version}</version>
 		</dependency>
 		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>${commons-collections4.version}</version>
+		</dependency>
+		<dependency>
 		    <groupId>com.alibaba</groupId>
 		    <artifactId>fastjson</artifactId>
 		    <version>${fastjson.version}</version>
@@ -52,8 +58,16 @@
 		    <artifactId>h2</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-codegen</artifactId>
 		</dependency>
 		<dependency>
 	        <groupId>org.mapstruct</groupId>
@@ -118,6 +132,10 @@
 										<password>${spring.datasource.password}</password>
 									</jdbc>
 									<generator>
+										<!-- 覆盖默认生成策略 -->
+										<strategy>
+											<name>test.boot.core.jooq.CustomGeneratorStrategy</name>
+										</strategy>
 										<database>
 											<name>org.jooq.util.h2.H2Database</name>
 											<includes>.*</includes>

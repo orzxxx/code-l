@@ -47,6 +47,10 @@
 <script src="components/datasource/add.js"></script>
 <script src="components/datasource/edit.js"></script>
 <script src="components/datasource/form.js"></script>
+<script src="components/template/index.js"></script>
+<script src="components/template/add.js"></script>
+<script src="components/template/edit.js"></script>
+<script src="components/template/form.js"></script>
 
 <script>
 
@@ -58,7 +62,7 @@
 				{
 					path: '',
 					component: EmptyRouterView,
-					name: '数据库',
+					name: '数据库管理',
 					icon: 'el-icon-message',
 					meta: {
 						level: 1
@@ -82,6 +86,39 @@
 								path: ':id(\\d+)',
 								name: '修改',
 								component: DataSourceEdit,
+								meta: {
+									level: 3
+								}
+							}
+						]
+					}]
+				}, {
+					path: '',
+					component: EmptyRouterView,
+					name: '模板管理',
+					icon: 'el-icon-message',
+					meta: {
+						level: 1
+					},
+					children: [{
+						path: 'templates',
+						name: '模板',
+						component: TemplateIndex,
+						meta: {
+							level: 2
+						},
+						children: [
+							{
+								path: 'new',
+								name: '新增',
+								component: TemplateAdd,
+								meta: {
+									level: 3
+								}
+							}, {
+								path: ':id(\\d+)',
+								name: '修改',
+								component: TemplateEdit,
 								meta: {
 									level: 3
 								}

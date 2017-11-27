@@ -2,15 +2,15 @@ package test.boot.model.dto;
 
 public class DatasourceDTO {
 
-	private Integer id;
-
-	private String url;
-
-	private String username;
-
-	private String password;
-
-	private String name;
+    private Integer id;
+    
+    private String  url;
+    
+    private String  username;
+    
+    private String  password;
+    
+    private String  name;
 
 	public Integer getId() {
 		return id;

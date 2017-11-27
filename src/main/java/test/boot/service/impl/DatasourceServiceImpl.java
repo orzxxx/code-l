@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import test.boot.common.exception.BusinessException;
 import test.boot.dao.DatasourceDao;
-import test.boot.entity.tables.pojos.TDatasource;
-import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.entity.tables.pojos.Datasource;
+import test.boot.entity.tables.records.DatasourceRecord;
 import test.boot.service.DatasourceService;
 
 @Service
@@ -20,12 +20,12 @@ public class DatasourceServiceImpl implements DatasourceService {
 	private DatasourceDao datasourceDao;
 	
 	@Override
-	public List<TDatasource> listDatasource() {
+	public List<Datasource> listDatasource() {
 		return datasourceDao.list();
 	}
 
 	@Override
-	public int saveDatasource(TDatasourceRecord record) {
+	public int saveDatasource(DatasourceRecord record) {
 		if (datasourceDao.countByName(record.getId(), record.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
@@ -33,7 +33,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 	}
 
 	@Override
-	public int updateDatasource(TDatasourceRecord record) {
+	public int updateDatasource(DatasourceRecord record) {
 		if (datasourceDao.countByName(record.getId(), record.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
@@ -46,7 +46,7 @@ public class DatasourceServiceImpl implements DatasourceService {
 	}
 
 	@Override
-	public TDatasource getDatasource(int id) {
+	public Datasource getDatasource(int id) {
 		return datasourceDao.get(id);
 	}
 }

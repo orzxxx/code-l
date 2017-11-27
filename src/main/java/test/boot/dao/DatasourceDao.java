@@ -1,6 +1,6 @@
 package test.boot.dao;
 
-import static test.boot.entity.tables.TDatasource.T_DATASOURCE;
+import static test.boot.entity.tables.Datasource.T_DATASOURCE;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.jooq.impl.DSL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import test.boot.entity.tables.pojos.TDatasource;
-import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.entity.tables.pojos.Datasource;
+import test.boot.entity.tables.records.DatasourceRecord;
 
 @Component
 public class DatasourceDao {
@@ -19,19 +19,19 @@ public class DatasourceDao {
 	@Autowired
 	private DSLContext create;
 	
-	public List<TDatasource> list() {
+	public List<Datasource> list() {
 		return create.selectFrom(T_DATASOURCE)
 				.orderBy(T_DATASOURCE.ID.desc())
-				.fetchInto(TDatasource.class);
+				.fetchInto(Datasource.class);
 	}
 
-	public int save(TDatasourceRecord record) {
+	public int save(DatasourceRecord record) {
 		return create.insertInto(T_DATASOURCE)
 				.set(record)
 				.execute();
 	}
 
-	public int update(TDatasourceRecord record) {
+	public int update(DatasourceRecord record) {
 		return create.update(T_DATASOURCE)
 				.set(record)
 				.where(T_DATASOURCE.ID.eq(record.getId()))
@@ -44,10 +44,10 @@ public class DatasourceDao {
 				.execute();
 	}
 
-	public TDatasource get(int id) {
+	public Datasource get(int id) {
 		return create.selectFrom(T_DATASOURCE)
 				.where(T_DATASOURCE.ID.eq(id))
-				.fetchOneInto(TDatasource.class);
+				.fetchOneInto(Datasource.class);
 	}
 	
 	public int countByName(Integer id, String name) {

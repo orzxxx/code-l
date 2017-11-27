@@ -6,7 +6,8 @@ package test.boot.entity;
 
 import javax.annotation.Generated;
 
-import test.boot.entity.tables.TDatasource;
+import test.boot.entity.tables.Datasource;
+import test.boot.entity.tables.Template;
 
 
 /**
@@ -25,5 +26,10 @@ public class Tables {
     /**
      * The table <code>PUBLIC.T_DATASOURCE</code>.
      */
-    public static final TDatasource T_DATASOURCE = test.boot.entity.tables.TDatasource.T_DATASOURCE;
+    public static final Datasource T_DATASOURCE = test.boot.entity.tables.Datasource.T_DATASOURCE;
+
+    /**
+     * The table <code>PUBLIC.T_TEMPLATE</code>.
+     */
+    public static final Template T_TEMPLATE = test.boot.entity.tables.Template.T_TEMPLATE;
 }

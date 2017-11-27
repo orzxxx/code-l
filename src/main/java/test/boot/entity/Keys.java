@@ -10,8 +10,10 @@ import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
 
-import test.boot.entity.tables.TDatasource;
-import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.entity.tables.Datasource;
+import test.boot.entity.tables.Template;
+import test.boot.entity.tables.records.DatasourceRecord;
+import test.boot.entity.tables.records.TemplateRecord;
 
 
 /**
@@ -32,13 +34,15 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<TDatasourceRecord, Integer> IDENTITY_T_DATASOURCE = Identities0.IDENTITY_T_DATASOURCE;
+    public static final Identity<DatasourceRecord, Integer> IDENTITY_T_DATASOURCE = Identities0.IDENTITY_T_DATASOURCE;
+    public static final Identity<TemplateRecord, Integer> IDENTITY_T_TEMPLATE = Identities0.IDENTITY_T_TEMPLATE;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<TDatasourceRecord> CONSTRAINT_6 = UniqueKeys0.CONSTRAINT_6;
+    public static final UniqueKey<DatasourceRecord> CONSTRAINT_6 = UniqueKeys0.CONSTRAINT_6;
+    public static final UniqueKey<TemplateRecord> CONSTRAINT_D = UniqueKeys0.CONSTRAINT_D;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -50,10 +54,12 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 extends AbstractKeys {
-        public static Identity<TDatasourceRecord, Integer> IDENTITY_T_DATASOURCE = createIdentity(TDatasource.T_DATASOURCE, TDatasource.T_DATASOURCE.ID);
+        public static Identity<DatasourceRecord, Integer> IDENTITY_T_DATASOURCE = createIdentity(Datasource.T_DATASOURCE, Datasource.T_DATASOURCE.ID);
+        public static Identity<TemplateRecord, Integer> IDENTITY_T_TEMPLATE = createIdentity(Template.T_TEMPLATE, Template.T_TEMPLATE.ID);
     }
 
     private static class UniqueKeys0 extends AbstractKeys {
-        public static final UniqueKey<TDatasourceRecord> CONSTRAINT_6 = createUniqueKey(TDatasource.T_DATASOURCE, "CONSTRAINT_6", TDatasource.T_DATASOURCE.ID);
+        public static final UniqueKey<DatasourceRecord> CONSTRAINT_6 = createUniqueKey(Datasource.T_DATASOURCE, "CONSTRAINT_6", Datasource.T_DATASOURCE.ID);
+        public static final UniqueKey<TemplateRecord> CONSTRAINT_D = createUniqueKey(Template.T_TEMPLATE, "CONSTRAINT_D", Template.T_TEMPLATE.ID);
     }
 }

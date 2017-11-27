@@ -15,7 +15,8 @@ import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
-import test.boot.entity.tables.TDatasource;
+import test.boot.entity.tables.Datasource;
+import test.boot.entity.tables.Template;
 
 
 /**
@@ -31,7 +32,7 @@ import test.boot.entity.tables.TDatasource;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 327034353;
+    private static final long serialVersionUID = 458755627;
 
     /**
      * The reference instance of <code>PUBLIC</code>
@@ -41,7 +42,12 @@ public class Public extends SchemaImpl {
     /**
      * The table <code>PUBLIC.T_DATASOURCE</code>.
      */
-    public final TDatasource T_DATASOURCE = test.boot.entity.tables.TDatasource.T_DATASOURCE;
+    public final Datasource T_DATASOURCE = test.boot.entity.tables.Datasource.T_DATASOURCE;
+
+    /**
+     * The table <code>PUBLIC.T_TEMPLATE</code>.
+     */
+    public final Template T_TEMPLATE = test.boot.entity.tables.Template.T_TEMPLATE;
 
     /**
      * No further instances allowed
@@ -68,6 +74,7 @@ public class Public extends SchemaImpl {
 
     private final List<Sequence<?>> getSequences0() {
         return Arrays.<Sequence<?>>asList(
+            Sequences.SYSTEM_SEQUENCE_15C88540_4EC4_4257_AA2F_A2BC87F2F982,
             Sequences.SYSTEM_SEQUENCE_EAEC937E_F281_407C_92EF_D2648F19A07C);
     }
 
@@ -80,6 +87,7 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            TDatasource.T_DATASOURCE);
+            Datasource.T_DATASOURCE,
+            Template.T_TEMPLATE);
     }
 }

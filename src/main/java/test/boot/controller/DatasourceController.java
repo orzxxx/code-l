@@ -2,21 +2,16 @@ package test.boot.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import test.boot.TB;
-import test.boot.entity.tables.pojos.TDatasource;
-import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.entity.tables.pojos.Datasource;
 import test.boot.mapper.DatasourceMapper;
 import test.boot.model.dto.DatasourceDTO;
 import test.boot.service.DatasourceService;
@@ -34,19 +29,15 @@ public class DatasourceController {
 	private DatasourceMapper datasourceMapper;
 	
 	@RequestMapping(method = RequestMethod.GET)
-    public List<TDatasource> list() {
+    public List<Datasource> list() {
         return datasourceService.listDatasource();
     }
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public TDatasource get(@PathVariable int id) {
+	public Datasource get(@PathVariable int id) {
 		return datasourceService.getDatasource(id);
 	}
 	
-	/*@RequestMapping(method = RequestMethod.POST)
-    public int save(@RequestBody TB tb) {
-        return datasourceService.saveDatasource(null);
-    }*/
 	@RequestMapping(method = RequestMethod.POST)
 	public int save(@RequestBody DatasourceDTO dto) {
 		return datasourceService.saveDatasource(datasourceMapper.toEntity(dto));

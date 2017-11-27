@@ -2,19 +2,19 @@ package test.boot.service;
 
 import java.util.List;
 
-import test.boot.entity.tables.pojos.TDatasource;
-import test.boot.entity.tables.records.TDatasourceRecord;
+import test.boot.entity.tables.pojos.Datasource;
+import test.boot.entity.tables.records.DatasourceRecord;
 
 public interface DatasourceService {
 
-	List<TDatasource> listDatasource();
+	List<Datasource> listDatasource();
 
-	int saveDatasource(TDatasourceRecord record);
+	int saveDatasource(DatasourceRecord record);
 
-	int updateDatasource(TDatasourceRecord record);
+	int updateDatasource(DatasourceRecord record);
 
 	int removeDatasource(int id);
 
-	TDatasource getDatasource(int id);
+	Datasource getDatasource(int id);
 
 }

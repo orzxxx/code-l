@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +20,7 @@ public class MvcExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public void defaultErrorHandler(HttpServletRequest request, HttpServletResponse response, Throwable ex) {
+    	System.out.println(ExceptionUtils.getStackTrace(ex));
     	if (ex instanceof BusinessException) {
     		responseError(response, HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
 		} else {
