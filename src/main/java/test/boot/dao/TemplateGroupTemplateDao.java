@@ -29,6 +29,7 @@ public class TemplateGroupTemplateDao {
 	
 	public List<TemplateGroupTemplateRecord> listByTemplageGroupId(int tgId) {
 		return create.selectFrom(R_TEMPLATE_GROUP_TEMPLATE)
+				.where(R_TEMPLATE_GROUP_TEMPLATE.TG_ID.eq(tgId))
 				.orderBy(R_TEMPLATE_GROUP_TEMPLATE.ID.desc())
 				.fetchInto(TemplateGroupTemplateRecord.class);
 	}

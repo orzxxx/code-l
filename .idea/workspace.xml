@@ -2,86 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cbb39c0-3cdb-4a8e-b5e9-9b0f186df01c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/highlight/highlight.pack.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/components/base/contentBak.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/boot/model/dto/DatasourceDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/test/boot/model/dto/TemplateDTO.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code.mv.db" afterPath="$PROJECT_DIR$/code.mv.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/controller/DatasourceController.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/controller/DatasourceController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/controller/ForTestController.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/controller/ForTestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/controller/TemplateController.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/controller/TemplateController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/core/jooq/CustomGeneratorStrategy.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/core/jooq/CustomGeneratorStrategy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/dao/DatasourceDao.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/dao/DatasourceDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/dao/TemplateDao.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/dao/TemplateDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys$Identities0.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys$Identities0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys$UniqueKeys0.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys$UniqueKeys0.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Keys.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Public.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Public.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Sequences.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Sequences.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/Tables.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/Tables.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/Datasource.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/Datasource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/Template.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/pojos/Datasource.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/pojos/Datasource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/pojos/Template.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/pojos/Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/records/DatasourceRecord.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/records/DatasourceRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/records/TemplateRecord.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/entity/tables/records/TemplateRecord.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/mapper/DatasourceMapper.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/mapper/DatasourceMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/mapper/DatasourceMapperImpl.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/mapper/DatasourceMapperImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/mapper/TemplateMapper.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/mapper/TemplateMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/mapper/TemplateMapperImpl_.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/mapper/TemplateMapperImpl_.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/mapper/decorator/TemplateMapperDecorator.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/mapper/decorator/TemplateMapperDecorator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/model/table/NameVariable.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/model/table/NameVariable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/model/table/TableInfo.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/model/table/TableInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/service/DatasourceService.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/service/DatasourceService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/service/TemplateService.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/service/TemplateService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/service/impl/DatasourceServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/service/impl/DatasourceServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/test/boot/service/impl/TemplateServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/test/boot/service/impl/TemplateServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/test/boot/MockTest.class" afterPath="$PROJECT_DIR$/target/test-classes/test/boot/MockTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/test/boot/RunTest.class" afterPath="$PROJECT_DIR$/target/test-classes/test/boot/RunTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code.trace.db" afterPath="$PROJECT_DIR$/code.trace.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/controller/DatasourceController.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/controller/DatasourceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/controller/ForTestController.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/controller/ForTestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/controller/TemplateController.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/controller/TemplateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/core/jooq/CustomGeneratorStrategy.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/core/jooq/CustomGeneratorStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/dao/DatasourceDao.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/dao/DatasourceDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/dao/TemplateDao.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/dao/TemplateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/Keys.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/Keys.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/Public.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/Public.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/Sequences.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/Sequences.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/Tables.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/Tables.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/Datasource.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/Datasource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/Template.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/Template.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/pojos/Template.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/pojos/Template.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/records/TemplateRecord.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/entity/tables/records/TemplateRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/mapper/DatasourceMapper.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/mapper/DatasourceMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/mapper/TemplateMapper.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/mapper/TemplateMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/mapper/decorator/TemplateMapperDecorator.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/mapper/decorator/TemplateMapperDecorator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/model/table/NameVariable.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/model/table/NameVariable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/model/table/TableInfo.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/model/table/TableInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/DatasourceService.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/DatasourceService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/TemplateService.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/TemplateService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/DatasourceServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/DatasourceServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/ProdInfoServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/ProdInfoServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/TemplateServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/TemplateServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/base/content.js" afterPath="$PROJECT_DIR$/static/components/base/content.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/base/header.js" afterPath="$PROJECT_DIR$/static/components/base/header.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/base/sidebar.js" afterPath="$PROJECT_DIR$/static/components/base/sidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/dao/TemplateGroupTemplateDao.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/dao/TemplateGroupTemplateDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/TemplateGroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/service/impl/TemplateGroupServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/datasource/add.js" afterPath="$PROJECT_DIR$/static/components/datasource/add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/datasource/edit.js" afterPath="$PROJECT_DIR$/static/components/datasource/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/datasource/form.js" afterPath="$PROJECT_DIR$/static/components/datasource/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/datasource/index.js" afterPath="$PROJECT_DIR$/static/components/datasource/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template/add.js" afterPath="$PROJECT_DIR$/static/components/template/add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template/edit.js" afterPath="$PROJECT_DIR$/static/components/template/edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template/form.js" afterPath="$PROJECT_DIR$/static/components/template/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template/index.js" afterPath="$PROJECT_DIR$/static/components/template/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/index.css" afterPath="$PROJECT_DIR$/static/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/index.html" afterPath="$PROJECT_DIR$/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/DatasourceMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/DatasourceMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/TemplateMapperImpl.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/TemplateMapperImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/TemplateMapperImpl_.java" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/test/boot/mapper/TemplateMapperImpl_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/boot/model/dto/DatasourceDTO.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/dto/DatasourceDTO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/test/boot/model/dto/TemplateDTO.java" afterPath="$PROJECT_DIR$/src/main/java/test/boot/dto/TemplateDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template-group/add.js" afterPath="$PROJECT_DIR$/static/components/template-group/add.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template-group/edit.js" afterPath="$PROJECT_DIR$/static/components/template-group/edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template-group/form.js" afterPath="$PROJECT_DIR$/static/components/template-group/form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/components/template-group/index.js" afterPath="$PROJECT_DIR$/static/components/template-group/index.js" />
     </list>
     <ignored path="code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,127 +34,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/template/edit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-              <folding>
-                <marker date="1515553931009" expanded="true" signature="71:304" placeholder="..." />
-                <marker date="1515553931009" expanded="true" signature="107:292" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/index.js">
+        <entry file="file://$PROJECT_DIR$/static/components/datasource/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
-                <marker date="1516167016251" expanded="true" signature="92:1782" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="140:415" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="467:1185" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="953:1169" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="1215:1770" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="1406:1459" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="1555:1607" placeholder="..." />
-                <marker date="1516167016251" expanded="true" signature="1702:1754" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/step2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-              <folding>
-                <marker date="1516170037349" expanded="true" signature="118:127" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="118:128" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="118:131" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="118:132" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="118:133" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="118:786" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="133:491" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="133:492" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="133:497" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="133:786" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="230:481" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="259:455" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="527:774" placeholder="..." />
-                <marker date="1516170037349" expanded="true" signature="590:758" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step4.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/step4.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32163742">
-              <caret line="11" column="109" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
-              <folding>
-                <marker date="1516172621004" expanded="true" signature="92:1550" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1574" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1627" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1653" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1654" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1745" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1805" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1883" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1887" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1908" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1909" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="92:1943" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="139:153" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="154:1513" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="154:1531" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="222:1483" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="222:1511" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:284" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:300" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:311" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:417" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:1039" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:1283" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:1453" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="281:1483" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="312:417" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="369:389" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="497:1005" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="505:524" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="525:1005" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="773:787" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="928:942" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="1552:1574" placeholder="..." />
-                <marker date="1516172621004" expanded="true" signature="1806:1883" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.764706">
-              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step3.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/step3.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-              <folding>
-                <marker date="1513932550477" expanded="true" signature="115:317" placeholder="..." />
-                <marker date="1513932550477" expanded="true" signature="153:301" placeholder="..." />
-                <marker date="1513932550477" expanded="true" signature="192:280" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="77:86" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="77:87" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="77:1642" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="92:281" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="121:281" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="301:428" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="301:1630" placeholder="..." />
+                <marker date="1516173847943" expanded="false" signature="414:425" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="428:1609" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="457:582" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="613:738" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="769:899" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="930:1059" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="1090:1609" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="1199:1577" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="1232:1353" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="1386:1548" placeholder="..." />
+                <marker date="1516173847943" expanded="true" signature="1580:1609" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -231,8 +66,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/components/template/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="36" />
+            <state vertical-scroll-proportion="-1.0869565">
+              <caret line="3" column="35" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="35" />
               <folding>
                 <marker date="1515553951644" expanded="true" signature="73:1161" placeholder="..." />
                 <marker date="1515553951644" expanded="true" signature="117:277" placeholder="..." />
@@ -248,74 +83,124 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/generator/database/step1.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/components/template-group/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
               <folding>
-                <marker date="1516166898517" expanded="true" signature="92:2804" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="123:2792" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="153:203" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="153:647" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="203:626" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="230:376" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="230:399" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="230:410" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="230:606" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="678:2773" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="728:2752" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="756:2732" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="908:919" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="993:1298" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="1167:1258" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="1337:1481" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="1520:1664" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="1703:1848" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="1887:2032" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="2071:2325" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="2364:2517" placeholder="..." />
-                <marker date="1516166898517" expanded="true" signature="2556:2703" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="84:1172" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="128:288" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="308:1160" placeholder="..." />
+                <marker date="1516173847941" expanded="false" signature="421:432" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="464:589" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="620:1139" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="729:1107" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="762:883" placeholder="..." />
+                <marker date="1516173847941" expanded="true" signature="916:1078" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/index.html">
+      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/components/datasource/edit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.6470585">
-              <caret line="197" column="29" selection-start-line="197" selection-start-column="29" selection-end-line="197" selection-end-column="29" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <folding>
+                <marker date="1516173895532" expanded="true" signature="75:312" placeholder="..." />
+                <marker date="1516173895532" expanded="true" signature="113:300" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/components/datasource/add.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <folding>
+                <marker date="1516173895530" expanded="true" signature="73:310" placeholder="..." />
+                <marker date="1516173895530" expanded="true" signature="111:298" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/components/template/form.js">
+        <entry file="file://$PROJECT_DIR$/static/components/datasource/form.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="54" selection-start-line="133" selection-start-column="54" selection-end-line="133" selection-end-column="54" />
+              <caret line="1" column="95" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="95" />
               <folding>
-                <marker date="1516159301142" expanded="true" signature="71:2954" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="71:3349" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="162:1922" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="213:301" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="357:449" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="490:582" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="636:856" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="895:1718" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="921:1212" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="1240:1580" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="1746:1902" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="1943:2317" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2194:2295" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2338:2944" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2458:2763" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2521:2738" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2823:2922" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="2965:3337" placeholder="..." />
-                <marker date="1516159301142" expanded="true" signature="3216:3315" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="151:768" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="199:279" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="326:405" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="457:541" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="592:676" placeholder="..." />
+                <marker date="1516173895535" expanded="true" signature="700:752" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="29.529411">
+              <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/components/template-group/edit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <folding>
+                <marker date="1516173922638" expanded="true" signature="82:327" placeholder="..." />
+                <marker date="1516173922638" expanded="true" signature="124:315" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/components/template-group/add.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <folding>
+                <marker date="1516173922641" expanded="true" signature="80:325" placeholder="..." />
+                <marker date="1516173922641" expanded="true" signature="122:313" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/components/template-group/form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14619882">
+              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+              <folding>
+                <marker date="1516176489299" expanded="true" signature="158:320" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="158:725" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="205:285" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="341:353" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:367" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:387" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:420" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:425" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:589" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="354:633" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="474:574" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="608:618" placeholder="..." />
+                <marker date="1516176489299" expanded="true" signature="657:709" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -355,26 +240,17 @@
         <option value="$PROJECT_DIR$/static/components/base/empty-router-view.js" />
         <option value="$PROJECT_DIR$/static/components/base/breadcrumb-container.js" />
         <option value="$PROJECT_DIR$/static/components/Home.js" />
-        <option value="$PROJECT_DIR$/static/components/datasource/form.js" />
-        <option value="$PROJECT_DIR$/static/components/datasource/edit.js" />
-        <option value="$PROJECT_DIR$/static/components/datasource/add.js" />
         <option value="$PROJECT_DIR$/static/assets/quill.js" />
         <option value="$PROJECT_DIR$/static/assets/quill/quill.js" />
         <option value="$PROJECT_DIR$/static/assets/quill/quill-snow.css" />
         <option value="$PROJECT_DIR$/static/assets/vue-editor/vue-editor-component.js" />
         <option value="$PROJECT_DIR$/static/assets/vue-editor-custom/vue-editor-component.js" />
         <option value="$PROJECT_DIR$/static/assets/vue-editor-custom/vue-editor.css" />
-        <option value="$PROJECT_DIR$/static/components/template-group/add.js" />
-        <option value="$PROJECT_DIR$/static/components/template-group/edit.js" />
-        <option value="$PROJECT_DIR$/static/components/template-group/index.js" />
-        <option value="$PROJECT_DIR$/static/components/template-group/form.js" />
         <option value="$PROJECT_DIR$/static/components/generator/index.js" />
         <option value="$PROJECT_DIR$/static/components/base/header.js" />
         <option value="$PROJECT_DIR$/static/components/home.js" />
-        <option value="$PROJECT_DIR$/static/components/datasource/index.js" />
         <option value="$PROJECT_DIR$/static/components/base/sidebar.js" />
         <option value="$PROJECT_DIR$/static/components/generator/database/step3.js" />
-        <option value="$PROJECT_DIR$/static/index.css" />
         <option value="$PROJECT_DIR$/static/components/base/content.js" />
         <option value="$PROJECT_DIR$/static/constants.js" />
         <option value="$PROJECT_DIR$/static/assets/index.js" />
@@ -390,6 +266,15 @@
         <option value="$PROJECT_DIR$/static/components/generator/database/step2.js" />
         <option value="$PROJECT_DIR$/static/components/generator/database/index.css" />
         <option value="$PROJECT_DIR$/static/components/generator/database/step4.js" />
+        <option value="$PROJECT_DIR$/static/components/datasource/index.js" />
+        <option value="$PROJECT_DIR$/static/components/template-group/index.js" />
+        <option value="$PROJECT_DIR$/static/components/datasource/edit.js" />
+        <option value="$PROJECT_DIR$/static/components/datasource/add.js" />
+        <option value="$PROJECT_DIR$/static/components/datasource/form.js" />
+        <option value="$PROJECT_DIR$/static/components/template-group/edit.js" />
+        <option value="$PROJECT_DIR$/static/components/template-group/add.js" />
+        <option value="$PROJECT_DIR$/static/index.css" />
+        <option value="$PROJECT_DIR$/static/components/template-group/form.js" />
       </list>
     </option>
   </component>
@@ -438,6 +323,136 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="code" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template-group" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datasource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -536,10 +551,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15892291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15892291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -722,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/template-group/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/assets/element/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24561404">
@@ -750,52 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/template-group/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5847953">
-          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/template-group/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="13" selection-start-line="40" selection-start-column="11" selection-end-line="45" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/datasource/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/components/base/sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="12" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/datasource/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058479533">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/template-group/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8538012">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/datasource/add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -820,33 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/datasource/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="34" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="34" />
-          <folding>
-            <marker date="1512714154858" expanded="true" signature="77:86" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="77:87" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="77:1603" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="92:268" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="121:268" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="288:389" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="288:1591" placeholder="..." />
-            <marker date="1512714154858" expanded="false" signature="375:386" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="389:1570" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="418:543" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="574:699" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="730:860" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="891:1020" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="1051:1570" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="1160:1538" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="1193:1314" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="1347:1509" placeholder="..." />
-            <marker date="1512714154858" expanded="true" signature="1541:1570" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/assets/highlight/highlight.github.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.9232643">
@@ -868,14 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/components/template/add.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -894,24 +825,6 @@
           <folding>
             <marker date="1515553931009" expanded="true" signature="71:304" placeholder="..." />
             <marker date="1515553931009" expanded="true" signature="107:292" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/components/template/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <marker date="1515553951644" expanded="true" signature="73:1161" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="117:277" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="297:1149" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="410:421" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="453:578" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="609:1128" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="718:1096" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="751:872" placeholder="..." />
-            <marker date="1515553951644" expanded="true" signature="905:1067" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1045,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/components/generator/database/step4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32163742">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="109" selection-start-line="11" selection-start-column="109" selection-end-line="11" selection-end-column="109" />
           <folding>
             <marker date="1516172621004" expanded="true" signature="92:1550" placeholder="..." />
@@ -1082,6 +995,158 @@
             <marker date="1516172621004" expanded="true" signature="928:942" placeholder="..." />
             <marker date="1516172621004" expanded="true" signature="1552:1574" placeholder="..." />
             <marker date="1516172621004" expanded="true" signature="1806:1883" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/datasource/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <marker date="1516173847943" expanded="true" signature="77:86" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="77:87" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="77:1642" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="92:281" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="121:281" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="301:428" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="301:1630" placeholder="..." />
+            <marker date="1516173847943" expanded="false" signature="414:425" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="428:1609" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="457:582" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="613:738" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="769:899" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="930:1059" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="1090:1609" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="1199:1577" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="1232:1353" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="1386:1548" placeholder="..." />
+            <marker date="1516173847943" expanded="true" signature="1580:1609" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/template/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0869565">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="35" />
+          <folding>
+            <marker date="1515553951644" expanded="true" signature="73:1161" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="117:277" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="297:1149" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="410:421" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="453:578" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="609:1128" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="718:1096" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="751:872" placeholder="..." />
+            <marker date="1515553951644" expanded="true" signature="905:1067" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/datasource/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <marker date="1516173895532" expanded="true" signature="75:312" placeholder="..." />
+            <marker date="1516173895532" expanded="true" signature="113:300" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/datasource/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <marker date="1516173895530" expanded="true" signature="73:310" placeholder="..." />
+            <marker date="1516173895530" expanded="true" signature="111:298" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/template-group/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <marker date="1516173847941" expanded="true" signature="84:1172" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="128:288" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="308:1160" placeholder="..." />
+            <marker date="1516173847941" expanded="false" signature="421:432" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="464:589" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="620:1139" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="729:1107" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="762:883" placeholder="..." />
+            <marker date="1516173847941" expanded="true" signature="916:1078" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="29.529411">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/datasource/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="95" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="95" />
+          <folding>
+            <marker date="1516173895535" expanded="true" signature="151:768" placeholder="..." />
+            <marker date="1516173895535" expanded="true" signature="199:279" placeholder="..." />
+            <marker date="1516173895535" expanded="true" signature="326:405" placeholder="..." />
+            <marker date="1516173895535" expanded="true" signature="457:541" placeholder="..." />
+            <marker date="1516173895535" expanded="true" signature="592:676" placeholder="..." />
+            <marker date="1516173895535" expanded="true" signature="700:752" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/template-group/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <marker date="1516173922638" expanded="true" signature="82:327" placeholder="..." />
+            <marker date="1516173922638" expanded="true" signature="124:315" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/template-group/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <marker date="1516173922641" expanded="true" signature="80:325" placeholder="..." />
+            <marker date="1516173922641" expanded="true" signature="122:313" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/components/template-group/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14619882">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <folding>
+            <marker date="1516176489299" expanded="true" signature="158:320" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="158:725" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="205:285" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="341:353" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:367" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:387" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:420" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:425" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:589" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="354:633" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="474:574" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="608:618" placeholder="..." />
+            <marker date="1516176489299" expanded="true" signature="657:709" placeholder="..." />
           </folding>
         </state>
       </provider>

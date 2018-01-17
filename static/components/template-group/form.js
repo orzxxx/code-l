@@ -1,14 +1,15 @@
 var TemplateGroupForm = Vue.component('template-group-form', {
-    template: '<el-form ref="form" :rules="rules" :model="form" label-width="80px">\
+    template: '<el-form size="small" ref="form" :rules="rules" :model="form" label-width="80px">\
         <el-form-item label="名称" prop="name">\
             <el-input v-model="form.name"></el-input>\
         </el-form-item>\
-        <el-form-item label="模板">\
-            <el-checkbox v-for="t in templates" \
-                :label="t.name" @change="v => handleChange(t.id, v)" \
-                :checked="form.tIds.indexOf(t.id) != -1"\
-                border>\
-            </el-checkbox>\
+        <el-form-item label="模板"  prop="tIds" style="width:600px;">\
+            <el-checkbox-group v-model="form.tIds">\
+                <el-checkbox size="small" v-for="t in templates" \
+                    :label="t.id">\
+                    {{t.name}}\
+                </el-checkbox>\
+            </el-checkbox-group>\
         </el-form-item>\
         <el-form-item>\
             <slot></slot>\
@@ -32,6 +33,9 @@ var TemplateGroupForm = Vue.component('template-group-form', {
             rules: {
                 name: [
                     { required: true, message: '请输入名称', trigger: 'blur' }
+                ],
+                tIds: [
+                    { type: 'array', required: true, message: '请至少选择一个模板', trigger: 'change' }
                 ]
             }
         }

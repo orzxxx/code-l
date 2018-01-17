@@ -1,9 +1,10 @@
 var DataSourceIndex = Vue.component('datasource-index', {
     template: '<div>\
         <div class="my__filter-container">\
-            <el-button class="my__filter-container__item" type="primary" icon="el-icon-fa-plus" @click="handleAdd">新增</el-button>\
+            <el-button size="small" class="my__filter-container__item" type="primary" icon="el-icon-fa-plus" @click="handleAdd">新增</el-button>\
         </div>\
         <el-table\
+            size="small"\
             :data="tableData"\
             tooltip-effect="dark"\
             style="width: 99%;">\

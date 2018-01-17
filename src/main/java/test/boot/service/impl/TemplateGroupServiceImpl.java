@@ -85,6 +85,7 @@ public class TemplateGroupServiceImpl implements TemplateGroupService {
 
 	@Override
 	public int removeTemplateGroup(int id) {
+		templateGroupTemplateDao.removeByTemplateGroupId(id);
 		return templateGroupDao.remove(id);
 	}
 

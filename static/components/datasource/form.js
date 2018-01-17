@@ -1,5 +1,5 @@
 var DataSourceForm = Vue.component('datasource-form', {
-    template: '<el-form ref="form" :rules="rules" :model="form" label-width="80px">\
+    template: '<el-form ref="form" :rules="rules" :model="form" label-width="80px" size="small">\
         <el-form-item label="名称"  prop="name">\
             <el-input v-model="form.name"></el-input>\
         </el-form-item>\

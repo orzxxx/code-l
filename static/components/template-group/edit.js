@@ -1,8 +1,8 @@
 var TemplateGroupEdit = Vue.component('template-group-edit', {
     template: '<div>\
         <template-group-form ref="form">\
-            <el-button type="primary" @click="onSubmit">提交</el-button>\
-            <el-button @click="handleCancel">取消</el-button>\
+            <el-button size="small" type="primary" @click="onSubmit">提交</el-button>\
+            <el-button size="small" @click="handleCancel">取消</el-button>\
         </template-group-form>\
     </div>',
     mounted: function () {

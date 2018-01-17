@@ -1,8 +1,8 @@
 var DataSourceEdit = Vue.component('datasource-edit', {
     template: '<div>\
         <datasource-form ref="form">\
-            <el-button type="primary" @click="onSubmit">提交</el-button>\
-            <el-button @click="handleCancel">取消</el-button>\
+            <el-button size="small" type="primary" @click="onSubmit">提交</el-button>\
+            <el-button size="small" @click="handleCancel">取消</el-button>\
         </datasource-form>\
     </div>',
     mounted: function () {
