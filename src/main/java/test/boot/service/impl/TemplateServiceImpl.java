@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import test.boot.common.exception.BusinessException;
 import test.boot.dao.TemplateDao;
-import test.boot.entity.tables.pojos.Template;
-import test.boot.entity.tables.records.TemplateRecord;
+import test.boot.dto.TemplateDTO;
+import test.boot.mapper.TemplateMapper;
 import test.boot.service.TemplateService;
 
 @Service
@@ -19,34 +19,37 @@ public class TemplateServiceImpl implements TemplateService {
 	@Autowired
 	private TemplateDao templateDao;
 	
+	@Autowired
+	private TemplateMapper templateMapper;
+	
 	@Override
-	public List<Template> listTemplate() {
-		return templateDao.list();
+	public List<TemplateDTO> listTemplate() {
+		return templateMapper.toDTO(templateDao.list());
 	}
 
 	@Override
-	public int saveTemplate(TemplateRecord record) {
-		if (templateDao.countByName(record.getId(), record.getName()) > 0) {
+	public int saveTemplate(TemplateDTO dto) {
+		if (templateDao.countByName(dto.getId(), dto.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
-		return templateDao.save(record);
+		return templateDao.save(templateMapper.toEntity(dto));
 	}
 
 	@Override
-	public int updateTemplate(TemplateRecord record) {
-		if (templateDao.countByName(record.getId(), record.getName()) > 0) {
+	public int updateTemplate(TemplateDTO dto) {
+		if (templateDao.countByName(dto.getId(), dto.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
-		return templateDao.update(record);
+		return templateDao.update(templateMapper.toEntity(dto));
 	}
 
 	@Override
 	public int removeTemplate(int id) {
-		return templateDao.delete(id);
+		return templateDao.remove(id);
 	}
 
 	@Override
-	public Template getTemplate(int id) {
-		return templateDao.get(id);
+	public TemplateDTO getTemplate(int id) {
+		return templateMapper.toDTO(templateDao.get(id));
 	}
 }

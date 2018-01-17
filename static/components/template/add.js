@@ -1,8 +1,8 @@
 var TemplateAdd = Vue.component('template-add', {
     template: '<div>\
         <template-form ref="form">\
-            <el-button type="primary" @click="onSubmit">提交</el-button>\
-            <el-button @click="handleCancel">取消</el-button>\
+            <el-button size="small" type="primary" @click="onSubmit">提交</el-button>\
+            <el-button size="small" @click="handleCancel">取消</el-button>\
         </template-form>\
     </div>',
     methods: {

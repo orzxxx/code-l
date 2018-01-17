@@ -12,6 +12,10 @@ var MyContent = Vue.component('my-content', {
     mounted: function() {
         // 全局ajax
         axios.interceptors.request.use(function (config) {
+            //TODO 可能会在返回时把其他loading取消掉？
+            if (config.loading != null && !config.loading) {
+                return config;
+            }
             this.loading = true; // loading
             return config;
         }.bind(this), function (error) {
@@ -66,7 +70,18 @@ var MyContent = Vue.component('my-content', {
                 return null; // TODO 404
             }
             var path = this.$route.matched[this.$route.matched.length - 1].path;
-            return this.allViews.get(path);
+            var result = this.allViews.get(path);
+            // 面包屑会时path变成解析后的？
+            if (result == null) {
+                this.allViews.forEach(function(v, k) {
+                    var re = pathToRegexp(k);
+                    if (re.test(path)) {
+                        result = this.allViews.get(k);
+                        return false;
+                    }
+                }.bind(this));
+            }
+            return result;
         }
     },
     watch: {

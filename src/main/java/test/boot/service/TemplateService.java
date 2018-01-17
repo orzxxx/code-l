@@ -2,19 +2,18 @@ package test.boot.service;
 
 import java.util.List;
 
-import test.boot.entity.tables.pojos.Template;
-import test.boot.entity.tables.records.TemplateRecord;
+import test.boot.dto.TemplateDTO;
 
 public interface TemplateService {
 
-	List<Template> listTemplate();
+	List<TemplateDTO> listTemplate();
 
-	int saveTemplate(TemplateRecord record);
+	int saveTemplate(TemplateDTO record);
 
-	int updateTemplate(TemplateRecord record);
+	int updateTemplate(TemplateDTO record);
 
 	int removeTemplate(int id);
 
-	Template getTemplate(int id);
+	TemplateDTO getTemplate(int id);
 
 }

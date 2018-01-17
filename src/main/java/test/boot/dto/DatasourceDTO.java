@@ -1,4 +1,4 @@
-package test.boot.model.dto;
+package test.boot.dto;
 
 public class DatasourceDTO {
 

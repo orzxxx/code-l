@@ -33,12 +33,16 @@ public class TemplateDao {
 
 	public int update(TemplateRecord record) {
 		return create.update(T_TEMPLATE)
-				.set(record)
+				.set(T_TEMPLATE.NAME, record.getName())
+				.set(T_TEMPLATE.FILE_NAME, record.getFileName())
+				.set(T_TEMPLATE.FILE_PATH, record.getFilePath())
+				.set(T_TEMPLATE.CONTENT, record.getContent())
+				.set(T_TEMPLATE.PARAMETERS, record.getParameters())
 				.where(T_TEMPLATE.ID.eq(record.getId()))
 				.execute();
 	}
 
-	public int delete(int id) {
+	public int remove(int id) {
 		return create.delete(T_TEMPLATE)
 				.where(T_TEMPLATE.ID.eq(id))
 				.execute();

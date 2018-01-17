@@ -6,13 +6,18 @@ package test.boot.entity;
 
 import javax.annotation.Generated;
 
+import org.jooq.ForeignKey;
 import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.AbstractKeys;
 
 import test.boot.entity.tables.Datasource;
 import test.boot.entity.tables.Template;
+import test.boot.entity.tables.TemplateGroup;
+import test.boot.entity.tables.TemplateGroupTemplate;
 import test.boot.entity.tables.records.DatasourceRecord;
+import test.boot.entity.tables.records.TemplateGroupRecord;
+import test.boot.entity.tables.records.TemplateGroupTemplateRecord;
 import test.boot.entity.tables.records.TemplateRecord;
 
 
@@ -34,32 +39,51 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
+    public static final Identity<TemplateGroupRecord, Integer> IDENTITY_T_TEMPLATE_GROUP = Identities0.IDENTITY_T_TEMPLATE_GROUP;
     public static final Identity<DatasourceRecord, Integer> IDENTITY_T_DATASOURCE = Identities0.IDENTITY_T_DATASOURCE;
     public static final Identity<TemplateRecord, Integer> IDENTITY_T_TEMPLATE = Identities0.IDENTITY_T_TEMPLATE;
+    public static final Identity<TemplateGroupTemplateRecord, Integer> IDENTITY_R_TEMPLATE_GROUP_TEMPLATE = Identities0.IDENTITY_R_TEMPLATE_GROUP_TEMPLATE;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<TemplateGroupRecord> CONSTRAINT_C = UniqueKeys0.CONSTRAINT_C;
     public static final UniqueKey<DatasourceRecord> CONSTRAINT_6 = UniqueKeys0.CONSTRAINT_6;
+    public static final UniqueKey<DatasourceRecord> CONSTRAINT_66 = UniqueKeys0.CONSTRAINT_66;
     public static final UniqueKey<TemplateRecord> CONSTRAINT_D = UniqueKeys0.CONSTRAINT_D;
+    public static final UniqueKey<TemplateRecord> CONSTRAINT_D5 = UniqueKeys0.CONSTRAINT_D5;
+    public static final UniqueKey<TemplateGroupTemplateRecord> CONSTRAINT_4 = UniqueKeys0.CONSTRAINT_4;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final ForeignKey<TemplateGroupTemplateRecord, TemplateGroupRecord> CONSTRAINT_4D = ForeignKeys0.CONSTRAINT_4D;
+    public static final ForeignKey<TemplateGroupTemplateRecord, TemplateRecord> CONSTRAINT_4D8 = ForeignKeys0.CONSTRAINT_4D8;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
     private static class Identities0 extends AbstractKeys {
+        public static Identity<TemplateGroupRecord, Integer> IDENTITY_T_TEMPLATE_GROUP = createIdentity(TemplateGroup.T_TEMPLATE_GROUP, TemplateGroup.T_TEMPLATE_GROUP.ID);
         public static Identity<DatasourceRecord, Integer> IDENTITY_T_DATASOURCE = createIdentity(Datasource.T_DATASOURCE, Datasource.T_DATASOURCE.ID);
         public static Identity<TemplateRecord, Integer> IDENTITY_T_TEMPLATE = createIdentity(Template.T_TEMPLATE, Template.T_TEMPLATE.ID);
+        public static Identity<TemplateGroupTemplateRecord, Integer> IDENTITY_R_TEMPLATE_GROUP_TEMPLATE = createIdentity(TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE, TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE.ID);
     }
 
     private static class UniqueKeys0 extends AbstractKeys {
+        public static final UniqueKey<TemplateGroupRecord> CONSTRAINT_C = createUniqueKey(TemplateGroup.T_TEMPLATE_GROUP, "CONSTRAINT_C", TemplateGroup.T_TEMPLATE_GROUP.ID);
         public static final UniqueKey<DatasourceRecord> CONSTRAINT_6 = createUniqueKey(Datasource.T_DATASOURCE, "CONSTRAINT_6", Datasource.T_DATASOURCE.ID);
+        public static final UniqueKey<DatasourceRecord> CONSTRAINT_66 = createUniqueKey(Datasource.T_DATASOURCE, "CONSTRAINT_66", Datasource.T_DATASOURCE.NAME);
         public static final UniqueKey<TemplateRecord> CONSTRAINT_D = createUniqueKey(Template.T_TEMPLATE, "CONSTRAINT_D", Template.T_TEMPLATE.ID);
+        public static final UniqueKey<TemplateRecord> CONSTRAINT_D5 = createUniqueKey(Template.T_TEMPLATE, "CONSTRAINT_D5", Template.T_TEMPLATE.NAME);
+        public static final UniqueKey<TemplateGroupTemplateRecord> CONSTRAINT_4 = createUniqueKey(TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE, "CONSTRAINT_4", TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE.ID);
+    }
+
+    private static class ForeignKeys0 extends AbstractKeys {
+        public static final ForeignKey<TemplateGroupTemplateRecord, TemplateGroupRecord> CONSTRAINT_4D = createForeignKey(test.boot.entity.Keys.CONSTRAINT_C, TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE, "CONSTRAINT_4D", TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE.TG_ID);
+        public static final ForeignKey<TemplateGroupTemplateRecord, TemplateRecord> CONSTRAINT_4D8 = createForeignKey(test.boot.entity.Keys.CONSTRAINT_D, TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE, "CONSTRAINT_4D8", TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE.T_ID);
     }
 }

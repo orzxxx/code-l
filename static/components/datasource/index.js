@@ -61,7 +61,10 @@ var DataSourceIndex = Vue.component('datasource-index', {
             axios.get('/datasources')
                 .then(function (resp) {
                     this.tableData = resp.data;
-                }.bind(this));
+                }.bind(this))
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
     },
     methods: {
@@ -87,7 +90,10 @@ var DataSourceIndex = Vue.component('datasource-index', {
                         this.tableData = this.tableData.filter(function(d) {
                             return d.id != row.id;
                         });
-                    }.bind(this));
+                    }.bind(this))
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }.bind(this));
         }
     }

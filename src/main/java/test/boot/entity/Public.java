@@ -17,6 +17,8 @@ import org.jooq.impl.SchemaImpl;
 
 import test.boot.entity.tables.Datasource;
 import test.boot.entity.tables.Template;
+import test.boot.entity.tables.TemplateGroup;
+import test.boot.entity.tables.TemplateGroupTemplate;
 
 
 /**
@@ -32,12 +34,17 @@ import test.boot.entity.tables.Template;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = 458755627;
+    private static final long serialVersionUID = 1305341582;
 
     /**
      * The reference instance of <code>PUBLIC</code>
      */
     public static final Public PUBLIC = new Public();
+
+    /**
+     * The table <code>PUBLIC.T_TEMPLATE_GROUP</code>.
+     */
+    public final TemplateGroup T_TEMPLATE_GROUP = test.boot.entity.tables.TemplateGroup.T_TEMPLATE_GROUP;
 
     /**
      * The table <code>PUBLIC.T_DATASOURCE</code>.
@@ -48,6 +55,11 @@ public class Public extends SchemaImpl {
      * The table <code>PUBLIC.T_TEMPLATE</code>.
      */
     public final Template T_TEMPLATE = test.boot.entity.tables.Template.T_TEMPLATE;
+
+    /**
+     * The table <code>PUBLIC.R_TEMPLATE_GROUP_TEMPLATE</code>.
+     */
+    public final TemplateGroupTemplate R_TEMPLATE_GROUP_TEMPLATE = test.boot.entity.tables.TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE;
 
     /**
      * No further instances allowed
@@ -75,6 +87,8 @@ public class Public extends SchemaImpl {
     private final List<Sequence<?>> getSequences0() {
         return Arrays.<Sequence<?>>asList(
             Sequences.SYSTEM_SEQUENCE_15C88540_4EC4_4257_AA2F_A2BC87F2F982,
+            Sequences.SYSTEM_SEQUENCE_3EB0E551_10CF_4DBF_BB70_11DB80C681F9,
+            Sequences.SYSTEM_SEQUENCE_3FABB1D1_1614_41BB_BB52_9131E25FD8DE,
             Sequences.SYSTEM_SEQUENCE_EAEC937E_F281_407C_92EF_D2648F19A07C);
     }
 
@@ -87,7 +101,9 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
+            TemplateGroup.T_TEMPLATE_GROUP,
             Datasource.T_DATASOURCE,
-            Template.T_TEMPLATE);
+            Template.T_TEMPLATE,
+            TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE);
     }
 }

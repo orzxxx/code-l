@@ -39,7 +39,6 @@
 .el-main {
 	background-color: #E9EEF3;
 	color: #333;
-	line-height: 160px;
 }
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {
@@ -60,9 +59,16 @@
 .el-table__empty-block {
 	height: 50%;
 }
+html, body{
+	height: 100%;
+}
 
-body > .el-container {
-	margin-bottom: 40px;
+#app {
+	height: 100%;
+}
+
+#app > .el-container {
+	height: 100%;
 }
 
 .el-main> .el-breadcrumb {
@@ -105,7 +111,8 @@ body {
 }
 
 .my__content {
-	min-height: 77%;
+	min-height: 88%;
+	max-height: 800px;
 	border-radius: 4px;
 	background-color: white;
 	padding: 20px;

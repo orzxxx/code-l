@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import test.boot.common.exception.BusinessException;
 import test.boot.dao.DatasourceDao;
-import test.boot.entity.tables.pojos.Datasource;
-import test.boot.entity.tables.records.DatasourceRecord;
+import test.boot.dto.DatasourceDTO;
+import test.boot.mapper.DatasourceMapper;
 import test.boot.service.DatasourceService;
 
 @Service
@@ -19,34 +19,37 @@ public class DatasourceServiceImpl implements DatasourceService {
 	@Autowired
 	private DatasourceDao datasourceDao;
 	
+	@Autowired
+	private DatasourceMapper datasourceMapper;
+	
 	@Override
-	public List<Datasource> listDatasource() {
-		return datasourceDao.list();
+	public List<DatasourceDTO> listDatasource() {
+		return datasourceMapper.toDTO(datasourceDao.list());
 	}
 
 	@Override
-	public int saveDatasource(DatasourceRecord record) {
-		if (datasourceDao.countByName(record.getId(), record.getName()) > 0) {
+	public int saveDatasource(DatasourceDTO dto) {
+		if (datasourceDao.countByName(dto.getId(), dto.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
-		return datasourceDao.save(record);
+		return datasourceDao.save(datasourceMapper.toEntity(dto));
 	}
 
 	@Override
-	public int updateDatasource(DatasourceRecord record) {
-		if (datasourceDao.countByName(record.getId(), record.getName()) > 0) {
+	public int updateDatasource(DatasourceDTO dto) {
+		if (datasourceDao.countByName(dto.getId(), dto.getName()) > 0) {
 			throw new BusinessException("名称已存在");
 		}
-		return datasourceDao.update(record);
+		return datasourceDao.update(datasourceMapper.toEntity(dto));
 	}
 
 	@Override
 	public int removeDatasource(int id) {
-		return datasourceDao.delete(id);
+		return datasourceDao.remove(id);
 	}
 
 	@Override
-	public Datasource getDatasource(int id) {
-		return datasourceDao.get(id);
+	public DatasourceDTO getDatasource(int id) {
+		return datasourceMapper.toDTO(datasourceDao.get(id));
 	}
 }

@@ -1,0 +1,3 @@
+Vue.prototype.GENERATE_STATUS_EXECUTING = 0;
+Vue.prototype.GENERATE_STATUS_SUCCESS = 1;
+Vue.prototype.GENERATE_STATUS_FAILED = 2;

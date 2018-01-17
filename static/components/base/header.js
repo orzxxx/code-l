@@ -4,7 +4,7 @@ var MyHeader = Vue.component('my-header', {
 			<el-col :span="4"\
 				<div @click="handleClick">\
 					<transition name="my-header__collapse--rotate" mode="out-in">\
-						<component v-bind:is="view"></component>\
+						<component :is="view"></component>\
 					</transition>\
 				</div>\
 			</el-col>\

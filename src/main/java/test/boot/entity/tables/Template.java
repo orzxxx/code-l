@@ -35,7 +35,7 @@ import test.boot.entity.tables.records.TemplateRecord;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Template extends TableImpl<TemplateRecord> {
 
-    private static final long serialVersionUID = 190753581;
+    private static final long serialVersionUID = -2048815816;
 
     /**
      * The reference instance of <code>PUBLIC.T_TEMPLATE</code>
@@ -66,19 +66,19 @@ public class Template extends TableImpl<TemplateRecord> {
     public final TableField<TemplateRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR.length(64), this, "");
 
     /**
-     * The column <code>PUBLIC.T_TEMPLATE.TAGS</code>.
-     */
-    public final TableField<TemplateRecord, String> TAGS = createField("TAGS", org.jooq.impl.SQLDataType.VARCHAR.length(256), this, "");
-
-    /**
      * The column <code>PUBLIC.T_TEMPLATE.FILE_NAME</code>.
      */
     public final TableField<TemplateRecord, String> FILE_NAME = createField("FILE_NAME", org.jooq.impl.SQLDataType.VARCHAR.length(64), this, "");
 
     /**
-     * The column <code>PUBLIC.T_TEMPLATE.FILEPATH</code>.
+     * The column <code>PUBLIC.T_TEMPLATE.FILE_PATH</code>.
      */
-    public final TableField<TemplateRecord, String> FILEPATH = createField("FILEPATH", org.jooq.impl.SQLDataType.VARCHAR.length(128), this, "");
+    public final TableField<TemplateRecord, String> FILE_PATH = createField("FILE_PATH", org.jooq.impl.SQLDataType.VARCHAR.length(128), this, "");
+
+    /**
+     * The column <code>PUBLIC.T_TEMPLATE.PARAMETERS</code>.
+     */
+    public final TableField<TemplateRecord, String> PARAMETERS = createField("PARAMETERS", org.jooq.impl.SQLDataType.VARCHAR.length(256), this, "");
 
     /**
      * Create a <code>PUBLIC.T_TEMPLATE</code> table reference
@@ -131,7 +131,7 @@ public class Template extends TableImpl<TemplateRecord> {
      */
     @Override
     public List<UniqueKey<TemplateRecord>> getKeys() {
-        return Arrays.<UniqueKey<TemplateRecord>>asList(Keys.CONSTRAINT_D);
+        return Arrays.<UniqueKey<TemplateRecord>>asList(Keys.CONSTRAINT_D, Keys.CONSTRAINT_D5);
     }
 
     /**

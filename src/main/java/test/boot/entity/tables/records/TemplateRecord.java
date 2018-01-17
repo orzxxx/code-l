@@ -28,7 +28,7 @@ import test.boot.entity.tables.Template;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implements Record6<Integer, String, String, String, String, String> {
 
-    private static final long serialVersionUID = 169869711;
+    private static final long serialVersionUID = 1748793163;
 
     /**
      * Setter for <code>PUBLIC.T_TEMPLATE.ID</code>.
@@ -73,44 +73,44 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
     }
 
     /**
-     * Setter for <code>PUBLIC.T_TEMPLATE.TAGS</code>.
-     */
-    public void setTags(String value) {
-        set(3, value);
-    }
-
-    /**
-     * Getter for <code>PUBLIC.T_TEMPLATE.TAGS</code>.
-     */
-    public String getTags() {
-        return (String) get(3);
-    }
-
-    /**
      * Setter for <code>PUBLIC.T_TEMPLATE.FILE_NAME</code>.
      */
     public void setFileName(String value) {
-        set(4, value);
+        set(3, value);
     }
 
     /**
      * Getter for <code>PUBLIC.T_TEMPLATE.FILE_NAME</code>.
      */
     public String getFileName() {
+        return (String) get(3);
+    }
+
+    /**
+     * Setter for <code>PUBLIC.T_TEMPLATE.FILE_PATH</code>.
+     */
+    public void setFilePath(String value) {
+        set(4, value);
+    }
+
+    /**
+     * Getter for <code>PUBLIC.T_TEMPLATE.FILE_PATH</code>.
+     */
+    public String getFilePath() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>PUBLIC.T_TEMPLATE.FILEPATH</code>.
+     * Setter for <code>PUBLIC.T_TEMPLATE.PARAMETERS</code>.
      */
-    public void setFilepath(String value) {
+    public void setParameters(String value) {
         set(5, value);
     }
 
     /**
-     * Getter for <code>PUBLIC.T_TEMPLATE.FILEPATH</code>.
+     * Getter for <code>PUBLIC.T_TEMPLATE.PARAMETERS</code>.
      */
-    public String getFilepath() {
+    public String getParameters() {
         return (String) get(5);
     }
 
@@ -175,14 +175,6 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      */
     @Override
     public Field<String> field4() {
-        return Template.T_TEMPLATE.TAGS;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Field<String> field5() {
         return Template.T_TEMPLATE.FILE_NAME;
     }
 
@@ -190,8 +182,16 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      * {@inheritDoc}
      */
     @Override
+    public Field<String> field5() {
+        return Template.T_TEMPLATE.FILE_PATH;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public Field<String> field6() {
-        return Template.T_TEMPLATE.FILEPATH;
+        return Template.T_TEMPLATE.PARAMETERS;
     }
 
     /**
@@ -223,14 +223,6 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      */
     @Override
     public String value4() {
-        return getTags();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public String value5() {
         return getFileName();
     }
 
@@ -238,8 +230,16 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      * {@inheritDoc}
      */
     @Override
+    public String value5() {
+        return getFilePath();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public String value6() {
-        return getFilepath();
+        return getParameters();
     }
 
     /**
@@ -274,15 +274,6 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      */
     @Override
     public TemplateRecord value4(String value) {
-        setTags(value);
-        return this;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public TemplateRecord value5(String value) {
         setFileName(value);
         return this;
     }
@@ -291,8 +282,17 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
      * {@inheritDoc}
      */
     @Override
+    public TemplateRecord value5(String value) {
+        setFilePath(value);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     public TemplateRecord value6(String value) {
-        setFilepath(value);
+        setParameters(value);
         return this;
     }
 
@@ -324,14 +324,14 @@ public class TemplateRecord extends UpdatableRecordImpl<TemplateRecord> implemen
     /**
      * Create a detached, initialised TemplateRecord
      */
-    public TemplateRecord(Integer id, String content, String name, String tags, String fileName, String filepath) {
+    public TemplateRecord(Integer id, String content, String name, String fileName, String filePath, String parameters) {
         super(Template.T_TEMPLATE);
 
         set(0, id);
         set(1, content);
         set(2, name);
-        set(3, tags);
-        set(4, fileName);
-        set(5, filepath);
+        set(3, fileName);
+        set(4, filePath);
+        set(5, parameters);
     }
 }

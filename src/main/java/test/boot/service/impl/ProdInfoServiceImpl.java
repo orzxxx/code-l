@@ -1,3 +1,4 @@
+package test.boot.service.impl;
 /*package test.boot.service.impl;
 
 import static test.boot.entry.mysql.tables.TProdInfo.T_PROD_INFO;

@@ -1,4 +1,4 @@
-package test.boot.model.dto;
+package test.boot.dto;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class TemplateDTO {
     
     private String filePath;
     
-	private List<String> tags;
+	private List<String> parameters;
 
 	public Integer getId() {
 		return id;
@@ -39,13 +39,13 @@ public class TemplateDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public List<String> getTags() {
-		return tags;
+	
+	public List<String> getParameters() {
+		return parameters;
 	}
 
-	public void setTags(List<String> tags) {
-		this.tags = tags;
+	public void setParameters(List<String> parameters) {
+		this.parameters = parameters;
 	}
 
 	public String getFileName() {

@@ -26,7 +26,7 @@ public class NameVariable {
 	}
 	
 	public String beanName() {
-		if (value.startsWith("t_") || value.startsWith("v_")) {
+		if (value.startsWith("t_") || value.startsWith("v_") || value.startsWith("r_")) {
 			return pascalCase().substring(1);
 		} else {
 			return pascalCase();
@@ -34,8 +34,9 @@ public class NameVariable {
 	}
 	
 	public String camelBeanName() {
-		if (value.startsWith("t_") || value.startsWith("v_")) {
-			return camelCase().substring(1);
+		if (value.startsWith("t_") || value.startsWith("v_") || value.startsWith("r_")) {
+			String camelCaseName = camelCase();
+			return camelCaseName.substring(1, 2).toLowerCase() + camelCaseName.substring(2);
 		} else {
 			return camelCase();
 		}

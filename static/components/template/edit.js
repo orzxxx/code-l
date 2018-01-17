@@ -1,13 +1,14 @@
 var TemplateEdit = Vue.component('template-edit', {
     template: '<div>\
         <template-form ref="form">\
-            <el-button type="primary" @click="onSubmit">提交</el-button>\
-            <el-button @click="handleCancel">取消</el-button>\
+            <el-button size="small" type="primary" @click="onSubmit">提交</el-button>\
+            <el-button size="small" @click="handleCancel">取消</el-button>\
         </template-form>\
     </div>',
     mounted: function () {
         axios.get('/templates/' + this.$route.params.id)
             .then(function (resp) {
+                resp.data.parameters = resp.data.parameters || [];
                 this.$refs.form.form = resp.data;
             }.bind(this));
     },

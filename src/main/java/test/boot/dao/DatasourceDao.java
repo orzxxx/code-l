@@ -33,12 +33,15 @@ public class DatasourceDao {
 
 	public int update(DatasourceRecord record) {
 		return create.update(T_DATASOURCE)
-				.set(record)
+				.set(T_DATASOURCE.NAME, record.getName())
+				.set(T_DATASOURCE.URL, record.getUrl())
+				.set(T_DATASOURCE.USERNAME, record.getUsername())
+				.set(T_DATASOURCE.PASSWORD, record.getPassword())
 				.where(T_DATASOURCE.ID.eq(record.getId()))
 				.execute();
 	}
 
-	public int delete(int id) {
+	public int remove(int id) {
 		return create.delete(T_DATASOURCE)
 				.where(T_DATASOURCE.ID.eq(id))
 				.execute();

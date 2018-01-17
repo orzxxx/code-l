@@ -8,6 +8,8 @@ import javax.annotation.Generated;
 
 import test.boot.entity.tables.Datasource;
 import test.boot.entity.tables.Template;
+import test.boot.entity.tables.TemplateGroup;
+import test.boot.entity.tables.TemplateGroupTemplate;
 
 
 /**
@@ -24,6 +26,11 @@ import test.boot.entity.tables.Template;
 public class Tables {
 
     /**
+     * The table <code>PUBLIC.T_TEMPLATE_GROUP</code>.
+     */
+    public static final TemplateGroup T_TEMPLATE_GROUP = test.boot.entity.tables.TemplateGroup.T_TEMPLATE_GROUP;
+
+    /**
      * The table <code>PUBLIC.T_DATASOURCE</code>.
      */
     public static final Datasource T_DATASOURCE = test.boot.entity.tables.Datasource.T_DATASOURCE;
@@ -32,4 +39,9 @@ public class Tables {
      * The table <code>PUBLIC.T_TEMPLATE</code>.
      */
     public static final Template T_TEMPLATE = test.boot.entity.tables.Template.T_TEMPLATE;
+
+    /**
+     * The table <code>PUBLIC.R_TEMPLATE_GROUP_TEMPLATE</code>.
+     */
+    public static final TemplateGroupTemplate R_TEMPLATE_GROUP_TEMPLATE = test.boot.entity.tables.TemplateGroupTemplate.R_TEMPLATE_GROUP_TEMPLATE;
 }

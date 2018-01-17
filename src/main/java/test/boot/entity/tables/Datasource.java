@@ -35,7 +35,7 @@ import test.boot.entity.tables.records.DatasourceRecord;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Datasource extends TableImpl<DatasourceRecord> {
 
-    private static final long serialVersionUID = 215834089;
+    private static final long serialVersionUID = -1166442131;
 
     /**
      * The reference instance of <code>PUBLIC.T_DATASOURCE</code>
@@ -126,7 +126,7 @@ public class Datasource extends TableImpl<DatasourceRecord> {
      */
     @Override
     public List<UniqueKey<DatasourceRecord>> getKeys() {
-        return Arrays.<UniqueKey<DatasourceRecord>>asList(Keys.CONSTRAINT_6);
+        return Arrays.<UniqueKey<DatasourceRecord>>asList(Keys.CONSTRAINT_6, Keys.CONSTRAINT_66);
     }
 
     /**

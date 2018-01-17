@@ -1,15 +1,13 @@
 package test.boot.core.jooq;
 
-import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.jooq.tools.StringUtils;
 import org.jooq.util.CatalogDefinition;
 import org.jooq.util.DefaultGeneratorStrategy;
 import org.jooq.util.Definition;
 import org.jooq.util.SchemaDefinition;
-import org.jooq.util.GeneratorStrategy.Mode;
 
 public class CustomGeneratorStrategy extends DefaultGeneratorStrategy {
 	 /**
@@ -87,9 +85,14 @@ public class CustomGeneratorStrategy extends DefaultGeneratorStrategy {
 				.replace('-', '_')
 				.replace('.', '_');
 		
-		// 去掉生成的类中T和V前缀
-		if (outputName.startsWith("T_") || outputName.startsWith("V_")) {
-			outputName = outputName.substring(2);
+		String[] prefixs = new String[] { "T_", "V_", "R_" };
+		
+		// 去掉生成的类前缀
+		for (int i = 0; i < prefixs.length; i++) {
+			if (outputName.startsWith(prefixs[i])) {
+				outputName = outputName.substring(2);
+				break;
+			}
 		}
 		
         // [#4562] Some characters should be treated like underscore

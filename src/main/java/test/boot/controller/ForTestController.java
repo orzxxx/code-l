@@ -3,6 +3,7 @@ package test.boot.controller;
 import groovy.lang.Writable;
 import groovy.text.GStringTemplateEngine;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.io.FileUtils;
 import org.jooq.DSLContext;
 import org.jooq.DataType;
 import org.jooq.Field;
@@ -98,10 +100,11 @@ public class ForTestController {
     	ts.forEach((t) -> {
     		String fileName = t.getFileName();
     		String content = t.getContent();
+    		String filePath = t.getFilePath();
     		GStringTemplateEngine engine = new GStringTemplateEngine();
     		Map binding = new HashMap();
         	try {
-				binding.put("t", tables("t_prod_account_info"));
+				binding.put("t", tables("t_template_group"));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -110,8 +113,8 @@ public class ForTestController {
 			try {
 				template = engine.createTemplate(content);
 				Writable w = template.make(binding);
-	        	String rc = w.toString();
-	        	System.out.println(rc);
+				content = w.toString();
+	        	System.out.println(content);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -121,8 +124,27 @@ public class ForTestController {
 			try {
 				template2 = engine.createTemplate(fileName);
 				Writable w2 = template2.make(binding);
-	        	String rf = w2.toString();
-	        	System.out.println(rf);
+				fileName = w2.toString();
+	        	System.out.println(fileName);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			groovy.text.Template template3;
+			try {
+				template3 = engine.createTemplate(t.getFilePath());
+				Writable w3 = template3.make(binding);
+				filePath = w3.toString();
+				System.out.println(filePath);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				FileUtils.writeStringToFile(
+						new File("./template/" + filePath.replace(".", "/") + "/" + fileName), content, "utf-8");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,6 +152,27 @@ public class ForTestController {
         	
     	});
     	return "1";
+    }
+    
+    @RequestMapping("/test/tmpl3")
+    public String t3() throws Exception {
+    	try {
+    		matedate();
+    		Map binding = new HashMap();
+    		TableVariable t = (TableVariable) tables("t_template_group");
+			binding.put("t", t);
+			System.out.println(t.columns.size());
+			GStringTemplateEngine engine = new GStringTemplateEngine();
+			String tmpl = FileUtils.readFileToString(new File("./template/tempD.txt"));
+			groovy.text.Template template;
+    			template = engine.createTemplate(tmpl);
+    			Writable w = template.make(binding);
+    			System.out.println(w);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("error");
+		}
+    	return "t3";
     }
     
     private Object matedate() throws SQLException, DataAccessException {
@@ -191,7 +234,6 @@ public class ForTestController {
     	
     	TableVariable tableInfo = new TableVariable(new NameVariable(r.getName()));
     	tableInfo.setColumns(columnInfos);
-    	
     	return tableInfo;
     }
     /*@RequestMapping("/t")

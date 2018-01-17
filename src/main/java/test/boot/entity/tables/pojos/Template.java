@@ -22,14 +22,14 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Template implements Serializable {
 
-    private static final long serialVersionUID = 366258373;
+    private static final long serialVersionUID = 1687350414;
 
     private Integer id;
     private String  content;
     private String  name;
-    private String  tags;
     private String  fileName;
-    private String  filepath;
+    private String  filePath;
+    private String  parameters;
 
     public Template() {}
 
@@ -37,25 +37,25 @@ public class Template implements Serializable {
         this.id = value.id;
         this.content = value.content;
         this.name = value.name;
-        this.tags = value.tags;
         this.fileName = value.fileName;
-        this.filepath = value.filepath;
+        this.filePath = value.filePath;
+        this.parameters = value.parameters;
     }
 
     public Template(
         Integer id,
         String  content,
         String  name,
-        String  tags,
         String  fileName,
-        String  filepath
+        String  filePath,
+        String  parameters
     ) {
         this.id = id;
         this.content = content;
         this.name = name;
-        this.tags = tags;
         this.fileName = fileName;
-        this.filepath = filepath;
+        this.filePath = filePath;
+        this.parameters = parameters;
     }
 
     public Integer getId() {
@@ -82,14 +82,6 @@ public class Template implements Serializable {
         this.name = name;
     }
 
-    public String getTags() {
-        return this.tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
     public String getFileName() {
         return this.fileName;
     }
@@ -98,12 +90,20 @@ public class Template implements Serializable {
         this.fileName = fileName;
     }
 
-    public String getFilepath() {
-        return this.filepath;
+    public String getFilePath() {
+        return this.filePath;
     }
 
-    public void setFilepath(String filepath) {
-        this.filepath = filepath;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getParameters() {
+        return this.parameters;
+    }
+
+    public void setParameters(String parameters) {
+        this.parameters = parameters;
     }
 
     @Override
@@ -113,9 +113,9 @@ public class Template implements Serializable {
         sb.append(id);
         sb.append(", ").append(content);
         sb.append(", ").append(name);
-        sb.append(", ").append(tags);
         sb.append(", ").append(fileName);
-        sb.append(", ").append(filepath);
+        sb.append(", ").append(filePath);
+        sb.append(", ").append(parameters);
 
         sb.append(")");
         return sb.toString();

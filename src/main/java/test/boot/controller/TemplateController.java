@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import test.boot.entity.tables.pojos.Template;
-import test.boot.mapper.TemplateMapper;
-import test.boot.model.dto.TemplateDTO;
+import test.boot.dto.TemplateDTO;
 import test.boot.service.TemplateService;
 
 @RestController
@@ -25,27 +23,24 @@ public class TemplateController {
 	@Autowired
 	private TemplateService templateService;
 	
-	@Autowired
-	private TemplateMapper templateMapper;
-	
 	@RequestMapping(method = RequestMethod.GET)
-    public List<Template> list() {
+    public List<TemplateDTO> list() {
         return templateService.listTemplate();
     }
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public TemplateDTO get(@PathVariable int id) {
-		return templateMapper.toDTO(templateService.getTemplate(id));
+		return templateService.getTemplate(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public int save(@RequestBody TemplateDTO dto) {
-		return templateService.saveTemplate(templateMapper.toEntity(dto));
+		return templateService.saveTemplate(dto);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT)
 	public int update(@RequestBody TemplateDTO dto) {
-		return templateService.updateTemplate(templateMapper.toEntity(dto));
+		return templateService.updateTemplate(dto);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
