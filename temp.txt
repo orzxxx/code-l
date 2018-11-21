@@ -1,0 +1,294 @@
+##函数定义
+函数定义使用关键字 fun，参数格式为：参数 : 类型
+
+	fun sum(a: Int, b: Int): Int {   // Int 参数，返回值 Int
+	    return a + b
+	}
+表达式作为函数体，返回类型自动推断：
+
+	fun sum(a: Int, b: Int) = a + b
+	
+	public fun sum(a: Int, b: Int): Int = a + b   // public 方法则必须明确写出返回类型
+无返回值的函数(类似Java中的void)：
+
+	fun printSum(a: Int, b: Int): Unit { 
+	    print(a + b)
+	}
+
+
+// 如果是返回 Unit类型，则可以省略(对于public方法也是这样)：
+
+	public fun printSum(a: Int, b: Int) { 
+	    print(a + b)
+	}
+		
+##可变长参数函数
+vararg v
+##lambda(匿名函数)
+val sumLambda: (Int, Int) -> Int = {x,y -> x+y}
+##常量与变量
+可变变量定义：var 关键字
+不可变变量定义：val 关键字，只能赋值一次的变量(类似Java中final修饰的变量)
+##注释
+与 Java 不同, Kotlin 中的块注释允许嵌套
+##NULL检查机制
+	//类型后面加?表示可为空
+	var age: String? = "23" 
+	//抛出空指针异常
+	val ages = age!!.toInt()
+	//不做处理返回 null
+	val ages1 = age?.toInt()
+	//age为空返回-1
+	val ages2 = age?.toInt() ?: -1
+##类型检测及自动类型转换
+我们可以使用 is 运算符检测一个表达式是否某类型的一个实例(类似于Java中的instanceof关键字)。
+
+	fun getStringLength(obj: Any): Int? {
+	  if (obj is String) {
+	    // 做过类型判断以后，obj会被系统自动转换为String类型
+	    return obj.length 
+	  }
+
+	  //在这里还有一种方法，与Java中instanceof不同，使用!is
+	  // if (obj !is String){
+	  //   // XXX
+	  // }
+	
+	  // 这里的obj仍然是Any类型的引用
+	  return null
+	}
+或者
+
+	fun getStringLength(obj: Any): Int? {
+	  if (obj !is String)
+	    return null
+	  // 在这个分支中, `obj` 的类型会被自动转换为 `String`
+	  return obj.length
+	}
+甚至还可以
+
+	fun getStringLength(obj: Any): Int? {
+	  // 在 `&&` 运算符的右侧, `obj` 的类型会被自动转换为 `String`
+	  if (obj is String && obj.length > 0)
+	    return obj.length
+	  return null
+	}
+##区间
+	for (i in 1..4) print(i) // 输出“1234”
+	
+	for (i in 4..1) print(i) // 什么都不输出
+	for (i in 4 downTo 1 step 2) print(i) // 输出“42”	
+
+	if (i in 1..10) { // 等同于 1 <= i && i <= 10
+	    println(i)
+	}
+	
+	// 使用 step 指定步长
+	for (i in 1..4 step 2) print(i) // 输出“13”
+	
+	for (i in 4 downTo 1 step 2) print(i) // 输出“42”
+	
+	
+	// 使用 until 函数排除结束元素
+	for (i in 1 until 10) {   // i in [1, 10) 排除了 10
+	     println(i)
+	}
+##字面常量
+下面是所有类型的字面常量：
+
+* 十进制：123
+* 长整型以大写的 L 结尾：123L
+* 16 进制以 0x 开头：0x0F
+* 2 进制以 0b 开头：0b00001011
+* 注意：8进制不支持
+
+Kotlin 同时也支持传统符号表示的浮点数值：
+
+* Doubles 默认写法: 123.5, 123.5e10
+* Floats 使用 f 或者 F 后缀：123.5f
+
+你可以使用下划线使数字常量更易读：
+
+	val oneMillion = 1_000_000
+	val creditCardNumber = 1234_5678_9012_3456L
+	val socialSecurityNumber = 999_99_9999L
+	val hexBytes = 0xFF_EC_DE_5E
+	val bytes = 0b11010010_01101001_10010100_10010010
+##比较
+三个等号 === 表示比较对象地址，两个 == 表示比较两个值大小
+##类型转换
+##位操作符
+对于Int和Long类型，还有一系列的位操作符可以使用，分别是：
+
+	shl(bits) – 左移位 (Java’s <<)
+	shr(bits) – 右移位 (Java’s >>)
+	ushr(bits) – 无符号右移位 (Java’s >>>)
+	and(bits) – 与
+	or(bits) – 或
+	xor(bits) – 异或
+	inv() – 反向
+##字符
+和 Java 不一样，Kotlin 中的 Char 不能直接和数字操作
+##布尔
+##数组
+	//[1,2,3]
+    val a = arrayOf(1, 2, 3)
+    //[0,2,4]
+    val b = Array(3, { i -> (i * 2) })
+除了类Array，还有ByteArray, ShortArray, IntArray，用来表示各个类型的数组，省去了装箱操作，因此效率更高，其用法同Array一样
+##字符串
+多行字符串
+
+	val text = """
+	    多行字符串
+	    多行字符串
+	    """
+trimMargin() 
+##字符串模板
+$ 表示一个变量名或者变量值
+$varName 表示变量值
+${varName.fun()} 表示变量的方法返回值
+
+	${'$'} // 输出$
+##IF 表达式
+// 作为表达式，替代三元表达式
+val max = if (a > b) a else b
+##When 表达式
+	when (x) {
+	    1 -> print("x == 1")
+	    2 -> print("x == 2")
+		0, 1 -> print("x == 0 or x == 1")
+		in 1..10 -> print("x is in the range")
+		is String -> x.startsWith("prefix")
+		x.isOdd() -> print("x is odd")
+	    else -> { // 注意这个块
+	        print("x 不是 1 ，也不是 2")
+	    }
+	}
+##For 循环
+	for (item in collection) print(item)
+	// 遍历一个数组或者一个 list
+	for (i in array.indices) {
+	    print(array[i])
+	}
+	// 或者用库函数 withIndex
+	for ((index, value) in array.withIndex()) {
+	    println("the element at $index is $value")
+	}
+##while 与 do...while 循环
+##返回和跳转
+##Break 和 Continue 标签
+在 Kotlin 中任何表达式都可以用标签（label）来标记。 标签的格式为标识符后跟 @ 符号，例如：abc@、fooBar@都是有效的标签。 要为一个表达式加标签，我们只要在其前加标签即可。
+
+	loop@ for (i in 1..100) {
+	    // ……
+	}
+	现在，我们可以用标签限制 break 或者continue：
+	
+	loop@ for (i in 1..100) {
+	    for (j in 1..100) {
+	        if (……) break@loop
+	    }
+	}
+标签限制的 break 跳转到刚好位于该标签指定的循环后面的执行点。 continue 继续标签指定的循环的下一次迭代。
+
+##标签处返回
+Kotlin 有函数字面量、局部函数和对象表达式。因此 Kotlin 的函数可以被嵌套。 标签限制的 return 允许我们从外层函数返回。 最重要的一个用途就是从 lambda 表达式中返回。回想一下我们这么写的时候：
+
+	fun foo() {
+	    ints.forEach {
+	        if (it == 0) return
+	        print(it)
+	    }
+	}
+这个 return 表达式从最直接包围它的函数即 foo 中返回。 （注意，这种非局部的返回只支持传给内联函数的 lambda 表达式。） 如果我们需要从 lambda 表达式中返回，我们必须给它加标签并用以限制 return。
+
+	fun foo() {
+	    ints.forEach lit@ {
+	        if (it == 0) return@lit
+	        print(it)
+	    }
+	}
+现在，它只会从 lambda 表达式中返回。通常情况下使用隐式标签更方便。 该标签与接受该 lambda 的函数同名。
+
+	fun foo() {
+	    ints.forEach {
+	        if (it == 0) return@forEach
+	        print(it)
+	    }
+	}
+或者，我们用一个匿名函数替代 lambda 表达式。 匿名函数内部的 return 语句将从该匿名函数自身返回
+
+	fun foo() {
+	    ints.forEach(fun(value: Int) {
+	        if (value == 0) return
+	        print(value)
+	    })
+	}
+当要返一个回值的时候，解析器优先选用标签限制的 return，即
+
+	return@a 1
+意为"从标签 @a 返回 1"，而不是"返回一个标签标注的表达式 (@a 1)"。
+##类定义
+空类 class Empty
+##类的属性
+属性声明的完整语法：
+
+	var <propertyName>[: <PropertyType>] [= <property_initializer>]
+	    [<getter>]
+	    [<setter>]
+
+如果属性类型可以从初始化语句或者类的成员函数中推断出来，那就可以省去类型，val不允许设置setter函数，因为它是只读的。
+
+	var allByDefault: Int? // 错误: 需要一个初始化语句, 默认实现了 getter 和 setter 方法
+	var initialized = 1    // 类型为 Int, 默认实现了 getter 和 setter
+	val simple: Int?       // 类型为 Int ，默认实现 getter ，但必须在构造函数中初始化
+	val inferredType = 1   // 类型为 Int 类型,默认实现 getter
+
+后端变量 field代表变量自身
+
+ 	var lastName: String = "zhang"
+        get() = field.toUpperCase()
+        set(value) {
+        	field = value
+        }
+
+    var heiht: Float = 145.4f
+        private set //
+
+非空属性必须在定义的时候初始化,延迟初始化的方案,使用 lateinit
+
+##主构造器
+
+	class Person constructor(firstName: String) {
+		// 初始化代码
+	    init {
+	        println("FirstName is $firstName")
+	    }
+	}
+
+##次构造函数
+
+类也可以有二级构造函数，需要加前缀 constructor:
+
+	class Person { 
+	    constructor(parent: Person) {
+	        parent.children.add(this) 
+	    }
+	}
+
+如果类有主构造函数，每个次构造函数都要，或直接或间接通过另一个次构造函数代理主构造函数。在同一个类中代理另一个构造函数使用 this 关键字：
+
+	class Person(val name: String) {
+	    constructor (name: String, age:Int) : this(name) {
+	        // 初始化...
+	    }
+	}
+
+如果一个非抽象类没有声明构造函数(主构造函数或次构造函数)，它会产生一个没有参数的构造函数。构造函数是 public 。如果你不想你的类有公共的构造函数，你就得声明一个空的主构造函数：
+
+	class DontCreateMe private constructor () {
+	}
+	注意：在 JVM 虚拟机中，如果主构造函数的所有参数都有默认值，编译器会生成一个附加的无参的构造函数，这个构造函数会直接使用默认值。这使得 Kotlin 可以更简单的使用像 Jackson 或者 JPA 这样使用无参构造函数来创建类实例的库。
+
+	class Customer(val customerName: String = "")

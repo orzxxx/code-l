@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    middev:
+      url: jdbc:mysql://192.25.105.210:3306/middev?characterEncoding=utf8
+      driver-class-name: com.mysql.jdbc.Driver
+      username: middb
+      password: prod2018
+    dc:
+      url: jdbc:oracle:thin:@192.25.101.186:1521:tdcdb186
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      username: colllczh
+      password: colllczh

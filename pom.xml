@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
-	<artifactId>code</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.me</groupId>
+	<artifactId>code-l</artifactId>
+	<version>0.0.1</version>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -18,19 +18,21 @@
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<commons-collections4.version>4.1</commons-collections4.version>
 		<commons-io.version>2.6</commons-io.version>
+		<guava.version>27.0-jre</guava.version>
 		<java.version>1.8</java.version>
 		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
-		<schema-crawler.version>14.17.03</schema-crawler.version>
+		<schema-crawler.version>15.01.04</schema-crawler.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -53,28 +55,19 @@
 		    <version>${fastjson.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>com.h2database</groupId>
-		    <artifactId>h2</artifactId>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/ojdbc6.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jooq</groupId>
-			<artifactId>jooq</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jooq</groupId>
-			<artifactId>jooq-codegen</artifactId>
 		</dependency>
 		<dependency>
 	        <groupId>org.mapstruct</groupId>
@@ -133,112 +126,13 @@
 		</dependency>
 	</dependencies>
 
-	<profiles>
-		<profile>
-			<id>jooq</id>
-			<activation>
-				<property>
-					<name>jooq</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>it.ozimov</groupId>
-    					<artifactId>yaml-properties-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>initialize</phase>
-								<goals>
-									<goal>read-project-properties</goal>
-								</goals>
-								<configuration>
-									<files>
-										<file>src/main/resources/application-dev.yml</file>
-									</files>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<groupId>org.jooq</groupId>
-						<artifactId>jooq-codegen-maven</artifactId>
-						<executions>
-							<execution>
-								<id>generate-h2</id>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>generate</goal>
-								</goals>
-								<configuration>
-									<jdbc>
-										<driver>${spring.datasource.driver-class-name}</driver>
-										<url>${spring.datasource.url}</url>
-										<user>${spring.datasource.username}</user>
-										<password>${spring.datasource.password}</password>
-									</jdbc>
-									<generator>
-										<!-- 覆盖默认生成策略 -->
-										<strategy>
-											<name>test.boot.core.jooq.CustomGeneratorStrategy</name>
-										</strategy>
-										<database>
-											<name>org.jooq.util.h2.H2Database</name>
-											<includes>.*</includes>
-											<excludes>.*(ddw|afa).*</excludes>
-											<dateAsTimestamp>true</dateAsTimestamp>
-											<inputSchema>PUBLIC</inputSchema>
-
-											<!-- <includeRoutines>false</includeRoutines>
-											<dateAsTimestamp>false</dateAsTimestamp> -->
-										</database>
-										<generate>
-											<deprecated>false</deprecated>
-											<instanceFields>true</instanceFields>
-											<pojos>true</pojos>
-										</generate>
-										<target>
-											<packageName>test.boot.entity</packageName>
-											<directory>src/main/java</directory>
-										</target>
-									</generator>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
 	<build>
 		<plugins>
 			<plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-compiler-plugin</artifactId>
-	            <version>3.5.1</version>
-	            <configuration>
-	                <annotationProcessorPaths>
-	                    <path>
-	                        <groupId>org.mapstruct</groupId>
-	                        <artifactId>mapstruct-processor</artifactId>
-	                        <version>${org.mapstruct.version}</version>
-	                    </path>
-	                </annotationProcessorPaths>
-	            </configuration>
 	        </plugin>
 		
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<!-- debug -->
-		            <jvmArguments>
-		            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
-		            </jvmArguments>
-	            </configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>

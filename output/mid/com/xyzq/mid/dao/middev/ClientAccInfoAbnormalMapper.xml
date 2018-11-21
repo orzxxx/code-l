@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyzq.mid.dao.middev.ClientAccInfoAbnormalMapper">
+  <resultMap id="BaseResultMap" type="com.xyzq.mid.entity.middev.ClientAccInfoAbnormal">
+        <id column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />    <result column="LOAD_DATE" jdbcType="TIMESTAMP" property="loadDate" />    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+
+  <insert id="batchinsert" parameterType="List" >
+    insert into middev.T_CLIENT_ACC_INFO_ABNORMAL (CLIENT_ID, LOAD_DATE)
+    values 
+    <foreach collection="list" item="item" separator="," >
+    (#{item.clientId},#{item.loadDate},)
+    </foreach>
+    ON DUPLICATE KEY UPDATE
+    CLIENT_ID=#{item.clientId},LOAD_DATE=#{item.loadDate},)
+  </insert>
+
+</mapper>

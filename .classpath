@@ -23,5 +23,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/custom/SoapFinanceProductServiceDC-099_37876.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
