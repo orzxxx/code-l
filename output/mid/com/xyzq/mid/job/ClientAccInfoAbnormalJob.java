@@ -9,12 +9,14 @@ import org.apache.logging.log4j.ThreadContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
 /**
  * 
  */
+ @Transactional
 public class ClientAccInfoAbnormalJob implements SimpleJob {
 
     private static Logger logger = LoggerFactory.getLogger(ClientAccInfoAbnormalJob.class);
@@ -27,10 +29,10 @@ public class ClientAccInfoAbnormalJob implements SimpleJob {
     	ThreadContext.put("serialNumber", UUID.randomUUID().toString());
     	ThreadContext.put("kv", "item=" + shardingContext.getShardingItem());
     	ThreadContext.put("jobName", "ClientAccInfoAbnormalJob");
-      logger.info("[ClientAccInfoAbnormalJob]开始");
+      logger.info("同步开始");
       ClientAccInfoAbnormal result = new ClientAccInfoAbnormal();
 		result.setClientId(entry.getClientId());		result.setLoadDate(entry.getLoadDate());
-      logger.info("[ClientAccInfoAbnormalJob]结束");
+      logger.info("同步结束");
     }
 
 }

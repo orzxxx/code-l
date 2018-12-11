@@ -36,4 +36,16 @@ public class DataSourceConfig {
 	public DataSource dcDataSource() {
 		return dcDataSourceProperties().initializeDataSourceBuilder().build();
 	}
+	
+	@Bean
+	@ConfigurationProperties("spring.datasource.uf20")
+	public DataSourceProperties uf20DataSourceProperties() {
+		return new DataSourceProperties();
+	}
+	
+	@Bean
+	@ConfigurationProperties("spring.datasource.uf20")
+	public DataSource uf20DataSource() {
+		return dcDataSourceProperties().initializeDataSourceBuilder().build();
+	}
 }

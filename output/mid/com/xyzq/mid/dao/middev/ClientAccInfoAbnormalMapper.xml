@@ -5,14 +5,14 @@
         <id column="CLIENT_ID" jdbcType="VARCHAR" property="clientId" />    <result column="LOAD_DATE" jdbcType="TIMESTAMP" property="loadDate" />    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
 
-  <insert id="batchinsert" parameterType="List" >
+  <insert id="batchInsertForUpdate" parameterType="List" >
     insert into middev.T_CLIENT_ACC_INFO_ABNORMAL (CLIENT_ID, LOAD_DATE)
     values 
     <foreach collection="list" item="item" separator="," >
     (#{item.clientId},#{item.loadDate},)
     </foreach>
     ON DUPLICATE KEY UPDATE
-    CLIENT_ID=#{item.clientId},LOAD_DATE=#{item.loadDate},)
+    CLIENT_ID=#{item.clientId},LOAD_DATE=#{item.loadDate},
   </insert>
 
 </mapper>

@@ -5,6 +5,7 @@ import java.lang.reflect.ParameterizedType;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -16,7 +17,42 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
+import com.alibaba.fastjson.JSON;
+
 public class ClassAnalysis {
+	
+	public static String toJson(Class clazz) throws Exception {
+		Object bean = clazz.newInstance();
+		List<Field> fields = getAllFields(clazz);
+		fields.stream().forEach(f -> {
+			try {
+				f.setAccessible(true);
+				if (f.getType().equals(Integer.class)) {
+					f.setInt(bean, (int) Math.random() * 100);
+				} else if (f.getType().equals(Double.class)) {
+					f.setDouble(bean, Math.random() * 10);
+				} else if (f.getType().equals(String.class)) {
+					f.set(bean, f.getName());
+				} else if (f.getType().equals(Date.class)) {
+					f.set(bean, DateUtils.addDays(new Date(), -new Random().nextInt(1000)));
+				}
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		});
+		
+		return JSON.toJSONString(Arrays.asList(bean));
+	}
+	
+	private static List<Field> getAllFields(Class clazz) {
+		List<Field> result = new ArrayList<>();
+		while (clazz != null){
+		    result.addAll(new ArrayList<Field>(Arrays.asList(clazz.getDeclaredFields())));
+		    clazz = clazz.getSuperclass();
+		}
+		
+		return result;
+	}
 	
 	public static String toXyXml(Class clazz, String serviceName) throws Exception {
 		List<String> result = new ArrayList<>();

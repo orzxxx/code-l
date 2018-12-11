@@ -12,6 +12,8 @@ import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 
+import test.boot.core.table.NameVariable;
+
 import com.google.common.base.Strings;
 
 public abstract class AbstractCodeGenerator {
@@ -61,7 +63,13 @@ public abstract class AbstractCodeGenerator {
 		Map<String, Object> result = new HashMap<>();
 		result.put("date", new Date()); 
 		result.put("path", templateFile.getPath().trim());
-		result.putAll(params);
+		params.forEach((k, v) -> {
+			if (v instanceof String) {
+				result.put(k, new NameVariable((String )v));
+			} else {
+				result.put(k, v);
+			}
+		});
 		return result;
 	}
 	

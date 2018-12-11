@@ -85,9 +85,18 @@ public class DataSourceAnalysis {
 		SchemaCrawlerOptionsBuilder optionsBuilder = SchemaCrawlerOptionsBuilder
 			      .builder()
 			      .withSchemaInfoLevel(SchemaInfoLevelBuilder.standard())
-			      .includeSchemas(new RegularExpressionInclusionRule("(?i)" + schemaName))
+			      .includeSchemas(new RegularExpressionInclusionRule(createSchemaRegex(schemaName, tableNames)))
+			      //.tableNamePattern("MONITOR_EXECUTE_INFO111")
 			      .includeTables(tn -> fullNames.contains(tn.toUpperCase()));
 		return optionsBuilder.toOptions();
+	}
+	
+	// 强行缩小查询范围
+	private String createSchemaRegex(String schemaName, List<String> tableNames) {
+		return "^("
+				+ tableNames.stream().reduce("", (r, tn) -> r + tn + "|")
+				+ schemaName.toLowerCase() + "|"
+				+ schemaName.toUpperCase() + ")$";
 	}
 	
 	private List<TableVariable> getTableVariables(Catalog catalog, Schema schema, 

@@ -1,0 +1,1 @@
+SELECT * FROM dual WHERE 1 = 0

@@ -16,6 +16,7 @@ public class SimpleCodeGenerator extends AbstractCodeGenerator {
 	public void generate(Map<String, Object> params) {
 		List<TemplateFile> templateFiles = getTemplateFiles();
 		templateFiles.forEach(tf -> {
+			System.out.println("==============" + tf.getPath());
 			generate(tf, getBinding(tf, params));
 		});
 	}

@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import test.boot.core.DataSourceCodeGenerator;
+import test.boot.core.DataSourceAnalysis;
+import test.boot.core.SimpleCodeGenerator;
+import test.boot.core.TableQueryInfo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,20 +26,36 @@ public class DTest {
 	private DataSource dcDataSource;
 	
 	@Test
-	public void midTest() throws Exception {
-		DataSourceCodeGenerator codeGenerator = new DataSourceCodeGenerator(middevDataSource, "mid");
-		codeGenerator.addTable("middev", "T_CLIENT_ACC_INFO_ABNORMAL", "ClientAccInfoAbnormal");
+	public void dTest() throws Exception {
+		SimpleCodeGenerator codeGenerator = new SimpleCodeGenerator("mid-t");
+		DataSourceAnalysis dataSourceAnalysis = new DataSourceAnalysis();
 		
 		Map<String, Object> binding = new HashMap<>();
-		binding.put("db", "middev");
+		binding.put("t", dataSourceAnalysis.datasoucreAnalyse(middevDataSource, 
+				new TableQueryInfo("middev", "T_GGT_SZHK_YWHB", "GgtSzhkYwhb")));
+		binding.put("t1", dataSourceAnalysis.datasoucreAnalyse(dcDataSource, 
+				new TableQueryInfo("DCSER", "ZD_SZHK_YWHB", "ZdSzhkYwhb")));
+		binding.put("db", "mysql");
+		binding.put("db1", "dcoracle");
+		binding.put("remark", "港股通数据采集");
+		binding.put("taskName", "T_GGT_");
 		
 		codeGenerator.generate(binding);
 	}
 	
 	@Test
-	public void dcTest() throws Exception {
-		DataSourceCodeGenerator codeGenerator = new DataSourceCodeGenerator(dcDataSource, "");
-		codeGenerator.addTable("dcraw", "MONITOR_EXECUTE_INFO", "MonitorExecuteInfo");
-		codeGenerator.generate();
+	public void cTest() throws Exception {
+		SimpleCodeGenerator codeGenerator = new SimpleCodeGenerator("mid-c");
+		DataSourceAnalysis dataSourceAnalysis = new DataSourceAnalysis();
+		
+		Map<String, Object> binding = new HashMap<>();
+		binding.put("t", dataSourceAnalysis.datasoucreAnalyse(middevDataSource, 
+				new TableQueryInfo("middev", "T_GGT_HK_YWHB", "GgtHkYwhb")));
+		binding.put("db", "mysql");
+		binding.put("remark", "业务回报");
+		binding.put("unit", "Months");
+		binding.put("column", "oc_date");
+		
+		codeGenerator.generate(binding);
 	}
 }

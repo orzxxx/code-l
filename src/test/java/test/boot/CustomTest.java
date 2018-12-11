@@ -5,6 +5,7 @@ import org.junit.Test;
 import cn.com.xyzq.schema.financeproductservicedc._1_0.PublishInformationServiceInType;
 import cn.com.xyzq.schema.financeproductservicedc._1_0.PublishProdAllocationInfoInType;
 import test.boot.custom.ClassAnalysis;
+import test.boot.temp.NewIAUserInfo;
 
 public class CustomTest {
 	
@@ -14,6 +15,7 @@ public class CustomTest {
 		// ClientAccountService
 		System.out.println(ClassAnalysis.toXyXml(PublishProdAllocationInfoInType.class, "FinanceProductServiceDC"));
 		//System.out.println(ClassAnalysis.toXyXml(PublishInformationServiceInType.class, "FinanceProductServiceDC"));
+		//System.out.println(ClassAnalysis.toJson(NewIAUserInfo.class));
 	}
 	
 }

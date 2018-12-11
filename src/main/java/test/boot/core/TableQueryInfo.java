@@ -1,6 +1,6 @@
 package test.boot.core;
 
-class TableQueryInfo {
+public class TableQueryInfo {
 
 	private String schema;
 	
