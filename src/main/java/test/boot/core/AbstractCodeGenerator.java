@@ -5,12 +5,14 @@ import groovy.text.GStringTemplateEngine;
 import groovy.text.Template;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 
 import test.boot.core.table.NameVariable;
 
@@ -25,6 +27,8 @@ public abstract class AbstractCodeGenerator {
 	private String outputPath;
 	
 	private String module;
+	
+	private Map<String, String> srcFilePathToDescFilePath = new HashMap<>();
 	
 	public AbstractCodeGenerator(String module, String outputPath) {
 		super();
@@ -55,8 +59,39 @@ public abstract class AbstractCodeGenerator {
 		}
 	}
 	
+	public void addTemplateFile(String src, String desc) {
+		srcFilePathToDescFilePath.put(src, desc);
+	}
+	
 	protected List<TemplateFile> getTemplateFiles() {
-		return templateFileScaner.scan(module);
+		List<TemplateFile> result = new ArrayList<>();
+		srcFilePathToDescFilePath.forEach((v, k) -> {
+			File srcFile = new File(templateFileScaner.createFilePath(v));
+			// TODO 只能文件夹
+			File descFile = new File(templateFileScaner.createFilePath(createFilePath(k)));
+			if (!srcFile.exists()) {
+				System.out.println("=========srcFile不存在:" + v);
+				return;
+			}
+			
+			if (srcFile.isFile()) {
+				result.add(templateFileScaner.createTemplateFile(
+						srcFile.getName(), srcFile, descFile.getPath() + "\\" + srcFile.getName()));
+			} else {
+				FileUtils.listFiles(
+						new File(v), 
+						TrueFileFilter.INSTANCE, 
+						TrueFileFilter.INSTANCE)
+						.stream()
+						.forEach(f -> {
+							result.add(templateFileScaner.createTemplateFile(
+									f.getName(), f, descFile.getPath() + "\\" + f.getName()));
+						});
+			} 
+		});
+		// 
+		result.addAll(templateFileScaner.scan(module));
+		return result;
 	}
 	
 	protected Map<String, Object> getBinding(TemplateFile templateFile, Map<String, Object> params) {
@@ -71,6 +106,14 @@ public abstract class AbstractCodeGenerator {
 			}
 		});
 		return result;
+	}
+	
+	private String createFilePath(String path) {
+		if (path.startsWith("/")) {
+			return module + path;
+		} else {
+			return module + "/" + path;
+		}
 	}
 	
 	protected String getOutputPath() {

@@ -13,7 +13,7 @@ class TemplateFileScaner {
 	private static final String TEMPLATE_ROOT_PATH = "template/";
 	
 	public List<TemplateFile> scan(String module){
-		String modulePath = createModulePath(module);
+		String modulePath = createFilePath(module);
 		List<File> files = new ArrayList<>(
 				FileUtils.listFiles(
 						new File(modulePath), 
@@ -21,21 +21,24 @@ class TemplateFileScaner {
 						TrueFileFilter.INSTANCE));
 		
 		return files.stream().map(f -> {
-			try {
-				TemplateFile tf = new TemplateFile();
-				tf.setContent(FileUtils.readFileToString(f, "UTF-8"));
-				tf.setName(f.getName());
-				tf.setPath(getRootAelativePath(f.getPath()));
-				return tf;
-			} catch (Exception e) {
-				e.printStackTrace();
-				throw new RuntimeException(e);
-			}
-			
+			return createTemplateFile(f.getName(), f, f.getPath());
 		}).collect(Collectors.toList());
 	}
 	
-	private String createModulePath(String module) {
+	public TemplateFile createTemplateFile(String name, File content, String path) {
+		try {
+			TemplateFile result = new TemplateFile();
+			result.setName(name);
+			result.setContent(FileUtils.readFileToString(content, "UTF-8"));
+			result.setPath(getRootAelativePath(path));
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public String createFilePath(String module) {
 		if (module.startsWith("/")) {
 			return TEMPLATE_ROOT_PATH + module.substring(1);
 		} else {
